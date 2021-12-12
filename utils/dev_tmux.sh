@@ -6,6 +6,10 @@ session=${2:-"some_session"}
 
 activate_venv="source venv/bin/activate"
 
+# to_install="pip install jedi black pylint neovim"
+to_install="pip install black pynvim"
+
+
 #check if session exists
 SESSIONEXISTS=$(tmux list-sessions | grep $session)
 if [ "$SESSIONEXISTS" != "" ]
@@ -24,8 +28,10 @@ echo Created session :$session
 
 # First window, install necessary plugins needed for vim to function
 tmux rename-window -t 0 'Main'
-tmux send-keys -t  $session:Main.0 "cd $path && $activate_venv && $export_creds && pip install jedi black flake8 neovim; tmux split-window -v; nvim" ENTER
-tmux send-keys -t  $session:Main.0 ":NT" ENTER
+
+tmux send-keys -t  $session:Main.0 "cd $path && $activate_venv && $export_creds && $to_install; tmux split-window -v; nvim" ENTER
+tmux send-keys -t  $session:Main.0 "NERDTreeToggle" ENTER
+
 sleep 3
 tmux send-keys -t  $session:Main.1 "cd $path && $activate_venv; tmux resize-pan -D 15" ENTER
 echo configured first window
@@ -34,10 +40,13 @@ echo configured first window
 #Second window
 tmux new-window -t $session:1 -n 'Secondary'
 tmux send-keys -t  $session:Secondary.0 "tmux split-window -v; nvim" ENTER
-tmux send-keys -t  $session:Secondary.0 ":NT" ENTER
+
+tmux send-keys -t  $session:Secondary.0 "NERDTreeToggle" ENTER
+
 sleep 3
 tmux send-keys -t  $session:Secondary.1 "tmux resize-pan -D 15" ENTER
 # sleep 2
 
 #attach to session
 tmux attach-session -t $SESSION:0.0
+
