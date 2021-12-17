@@ -1,4 +1,5 @@
 {
+    "session.saveOnVimLeave": false,
     "signature.target": "echo",
     "coc.preferences.formatOnSaveFiletypes": [
         "css",
