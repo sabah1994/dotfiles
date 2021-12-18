@@ -1,4 +1,9 @@
 {
+    "snippets.extends": {
+        "javascript": [
+            "html"
+        ]
+    },
     "session.saveOnVimLeave": false,
     "signature.target": "echo",
     "coc.preferences.formatOnSaveFiletypes": [
