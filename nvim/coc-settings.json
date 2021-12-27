@@ -1,4 +1,9 @@
 {
+    "snippets.extends": {
+        "javascript": [
+            "html"
+        ]
+    },
     "session.saveOnVimLeave": false,
     "signature.target": "echo",
     "coc.preferences.formatOnSaveFiletypes": [
@@ -9,7 +14,8 @@
         "html",
         "yaml",
         "json",
-        "python"
+        "python",
+        "java"
     ],
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,

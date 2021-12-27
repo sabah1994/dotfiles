@@ -14,7 +14,8 @@ call plug#end()
 " coc extensions
 let g:coc_global_extensions = [
 \ 'coc-json',
-\ 'coc-pyright',
+\ 'coc-jedi',
+\ 'coc-java',
 \ 'coc-snippets',
 \ 'coc-tsserver',
 \ 'coc-vimlsp',
@@ -35,7 +36,7 @@ set shiftwidth=4
 set expandtab
 set clipboard=unnamedplus          " Copy to system clipboard
 set nospell                        " spell check spelunker setting
-set autochdir "Automatically change current directory to crrent file"
+" set autochdir "Automatically change current directory to crrent file"
 
 "airline config
 let g:airline_theme='dark'
