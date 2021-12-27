@@ -14,7 +14,8 @@
         "html",
         "yaml",
         "json",
-        "python"
+        "python",
+        "java"
     ],
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,
