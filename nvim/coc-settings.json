@@ -20,6 +20,7 @@
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,
     "python.formatting.provider": "black",
+    "python.formatting.blackPath": "/home/sabah/Desktop/vim_venv/bin/black",
     "suggest.completionItemKindLabels": {
         "method": "  ",
         "function": "  ",
