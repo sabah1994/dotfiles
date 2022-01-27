@@ -3,7 +3,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'      "Theme
 Plug 'preservim/nerdtree'   "file directory
 Plug 'ryanoasis/vim-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight' "to get colour on dev icons
 Plug 'tpope/vim-commentary' "to comment easily
 Plug 'vim-airline/vim-airline' " Status line
 Plug 'tpope/vim-fugitive' " Needed for git branch in vim-airline
@@ -11,10 +10,12 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
 call plug#end()
 
+
+let g:python3_host_prog="/home/sabah/Desktop/vim_venv/bin/python"
 " coc extensions
 let g:coc_global_extensions = [
 \ 'coc-json',
-\ 'coc-jedi',
+\ 'coc-pyright',
 \ 'coc-java',
 \ 'coc-snippets',
 \ 'coc-tsserver',
@@ -22,7 +23,6 @@ let g:coc_global_extensions = [
 \ 'coc-pairs',
 \ 'coc-lists'
 \ ]
-
 let mapleader = ","
 colorscheme gruvbox
 set encoding=utf-8
@@ -53,7 +53,7 @@ set splitbelow            "open horizental split below
 "do not copy delete command
 nnoremap d "_d
 vnoremap d "_d
-
+vnoremap p "_dP
 
 source $HOME/.config/nvim/plug-config/coc.vim
 
