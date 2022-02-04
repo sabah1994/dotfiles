@@ -8,6 +8,8 @@ Plug 'vim-airline/vim-airline' " Status line
 Plug 'tpope/vim-fugitive' " Needed for git branch in vim-airline
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
+Plug 'PeterRincker/vim-searchlight' " undercursor higlighted text in different colour
+Plug 'TaDaa/vimade'                " show inactive windows in different colours
 call plug#end()
 
 
@@ -49,11 +51,15 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1  " close NERDTree when file open
 set splitright            "open vertical split on right
 set splitbelow            "open horizental split below
+let NERDTreeWinSize = 50   " NT win size
 
 "do not copy delete command
 nnoremap d "_d
 vnoremap d "_d
 vnoremap p "_dP
+
+" open coc-defitin in vsplit
+nmap <silent> gv :call CocAction('jumpDefinition', 'vsplit') <CR>
 
 source $HOME/.config/nvim/plug-config/coc.vim
 
