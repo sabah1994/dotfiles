@@ -21,6 +21,10 @@
     "python.linting.pylintEnabled": true,
     "python.formatting.provider": "black",
     "python.formatting.blackPath": "/home/sabah/Desktop/vim_venv/bin/black",
+    "list.source.files.excludePatterns": [
+        "**/venv/**",
+        "**/.git/**"
+    ],
     "suggest.completionItemKindLabels": {
         "method": "  ",
         "function": "  ",
