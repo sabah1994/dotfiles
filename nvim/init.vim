@@ -26,6 +26,7 @@ let g:coc_global_extensions = [
 \ 'coc-lists'
 \ ]
 let mapleader = ","
+let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 set encoding=utf-8
 set number relativenumber
