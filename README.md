@@ -1,2 +1,2 @@
 # dotfiles
-My got files
+My dot files
