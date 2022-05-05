@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'      "Theme
 Plug 'preservim/nerdtree'   "file directory
 Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight' "Correct colour for icons
 Plug 'tpope/vim-commentary' "to comment easily
 Plug 'vim-airline/vim-airline' " Status line
 Plug 'tpope/vim-fugitive' " Needed for git branch in vim-airline
@@ -13,7 +14,7 @@ Plug 'TaDaa/vimade'                " show inactive windows in different colours
 call plug#end()
 
 
-let g:python3_host_prog="/home/sabah/Desktop/vim_venv/bin/python"
+let g:python3_host_prog="~/vim_venv/bin/python"
 " coc extensions
 let g:coc_global_extensions = [
 \ 'coc-json',
@@ -23,7 +24,8 @@ let g:coc_global_extensions = [
 \ 'coc-tsserver',
 \ 'coc-vimlsp',
 \ 'coc-pairs',
-\ 'coc-lists'
+\ 'coc-lists',
+\ 'coc-sh'
 \ ]
 let mapleader = ","
 let g:gruvbox_contrast_dark = 'hard'
@@ -44,7 +46,7 @@ set nospell                        " spell check spelunker setting
 "airline config
 let g:airline_theme='dark'
 " let g:airline_theme = 'powerlineish'
-let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1 "Enable the list of buffers top
 let g:airline#extensions#branch#enabled=1
 
 "Nerd tree shortcut
