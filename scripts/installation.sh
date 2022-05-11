@@ -31,7 +31,7 @@ install_packages(){
     $1 install neovim >&-
     $1 install nodejs >&-
     $1 install tmux >&-
-    $1 install git
+    # $1 install git
 }
 
 setup_tmux() {
@@ -46,6 +46,7 @@ setup_tmux() {
 }
 
 clone_dot_files(){
+    rm -rf ~/dotfiles
     cd ~
     git clone https://github.com/sabah1994/dotfiles.git
 }
