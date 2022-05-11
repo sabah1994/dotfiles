@@ -54,22 +54,20 @@ setup_vim(){
     echo "==================================="
     echo "Downlading plug manager"
     echo "==================================="
-
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
     echo "==================================="
     echo "Create python3 venv with necessary pacakges"
     echo "==================================="
-
     rm -rf ~/vim_venv
     python3 -m venv ~/vim_venv
     source ~/vim_venv/bin/activate
     pip install black neovim
+
     echo "==================================="
     echo "Creating Symlinks for Vim"
     echo "==================================="
-    
     mkdir -p ~/.config/nvim/plug-config
     ln -sf ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
     ln -sf ~/dotfiles/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
