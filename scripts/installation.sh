@@ -28,9 +28,9 @@ install_packages(){
     echo "tmux"
     echo git
     echo "==================================="
-    $1 install neovim >&-
-    $1 install nodejs >&-
-    $1 install tmux >&-
+    $1 install neovim
+    $1 install nodejs
+    $1 install tmux
     # $1 install git
 }
 
