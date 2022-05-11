@@ -11,6 +11,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
 Plug 'PeterRincker/vim-searchlight' " undercursor higlighted text in different colour
 Plug 'TaDaa/vimade'                " show inactive windows in different colours
+Plug 'lukas-reineke/indent-blankline.nvim' " indent guide 
 call plug#end()
 
 
