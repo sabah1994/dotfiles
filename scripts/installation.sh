@@ -20,21 +20,20 @@ install_homebrew(){
     fi
 }
 
-install_vim(){
+install_packages(){
     echo "==================================="
-    echo "Installing neovim and nodeJS"
+    echo "Installing Packages"
+    echo "neovim"
+    echo "nodejs"
+    echo "tmux"
+    echo git
     echo "==================================="
     $1 install neovim >&-
     $1 install nodejs >&-
-
-}
-
-install_tmux(){
-    echo "==================================="
-    echo "Installing tmux" 
-    echo "==================================="
     $1 install tmux >&-
+    $1 install git
 }
+
 setup_tmux() {
     echo "==================================="
     echo "Linking tmux config"
@@ -44,12 +43,6 @@ setup_tmux() {
 
     touch ~/.tmux.conf
     ln -sf ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
-}
-install_misc(){
-    echo "==================================="
-    echo "installing misc"
-    echo "==================================="
-    $1 install git 
 }
 
 clone_dot_files(){
@@ -96,8 +89,6 @@ fi
 
 
 clone_dot_files
-install_vim "$install_prefix"
+install_packages "$install_prefix"
 setup_vim
-install_tmux "$install_prefix"
 setup_tmux
-install_misc "$install_prefix"
