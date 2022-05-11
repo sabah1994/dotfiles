@@ -166,3 +166,5 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 "open buffers
 nnoremap <silent><nowait> <space>b  :<C-u>CocList buffers<CR>
+"Open files
+nnoremap <silent><nowait> <space>f  :<C-u>CocList files<CR>
