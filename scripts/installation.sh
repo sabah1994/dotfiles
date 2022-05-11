@@ -1,24 +1,55 @@
-linux_install_vim(){
+what_os(){
+    unameOut="$(uname -s)"
+    case "${unameOut}" in
+        Linux*)     machine=Linux;;
+        Darwin*)    machine=Mac;;
+        CYGWIN*)    machine=Cygwin;;
+        MINGW*)     machine=MinGw;;
+        *)          machine="UNKNOWN:${unameOut}"
+    esac
+    echo "$machine"
+}
+
+install_homebrew(){
+    which -s brew
+    if [[ $? != 0 ]] ; then
+        echo "==================================="
+        echo "Installing Homebrew"
+        echo "==================================="
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    fi
+}
+
+install_vim(){
     echo "==================================="
     echo "Installing neovim and nodeJS"
     echo "==================================="
-    sudo apt install neovim >&-
-    sudo apt install nodejs >&-
+    $1 install neovim >&-
+    $1 install nodejs >&-
 
 }
 
-linux_install_tmux(){
+install_tmux(){
     echo "==================================="
     echo "Installing tmux" 
     echo "==================================="
-    sudo apt install tmux >&-
+    $1 install tmux >&-
 }
+setup_tmux() {
+    echo "==================================="
+    echo "Linking tmux config"
+    echo "==================================="
 
-linux_install_misc(){
+    cd ~/
+
+    touch ~/.tmux.conf
+    ln -sf ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
+}
+install_misc(){
     echo "==================================="
     echo "installing misc"
     echo "==================================="
-    sudo apt install git >&-
+    $1 install git 
 }
 
 clone_dot_files(){
@@ -48,8 +79,25 @@ setup_vim(){
     echo "==================================="
 }
 
+
+machine=$(what_os)
+if [ "$machine" == "Mac" ]
+then
+    echo "Machine Identifies as Mac"
+    install_homebrew
+    install_prefix="brew "
+elif [[ "$machine" == "Linux" ]]; then
+    echo "Machine Identified as Linux"
+    install_prefix="sudo apt "
+else
+    echo "Machine not identified, exiting"
+    exit 1
+fi
+
+
 clone_dot_files
-linux_install_vim
+install_vim "$install_prefix"
 setup_vim
-# linux_install_tmux
-# linux_install_misc
+install_tmux "$install_prefix"
+setup_tmux
+install_misc "$install_prefix"
