@@ -59,6 +59,14 @@ setup_vim(){
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
     echo "==================================="
+    echo "Create python3 venv with necessary pacakges"
+    echo "==================================="
+
+    rm -rf ~/vim_venv
+    python3 -m venv ~/vim_venv
+    source ~/vim_venv/bin/activate
+    pip install black neovim
+    echo "==================================="
     echo "Creating Symlinks for Vim"
     echo "==================================="
     
