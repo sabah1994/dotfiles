@@ -1,3 +1,4 @@
+#!/bin/bash
 clean_everything(){
     rm -rf ~/dotfiles
 }

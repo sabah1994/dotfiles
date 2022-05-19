@@ -1,3 +1,4 @@
+#!/bin/bash
 what_os(){
     unameOut="$(uname -s)"
     case "${unameOut}" in
@@ -48,7 +49,7 @@ setup_tmux() {
 clone_dot_files(){
     rm -rf ~/dotfiles
     cd ~
-    git clone https://github.com/sabah1994/dotfiles.git
+    git clone git@github.com:sabah1994/dotfiles.git
 }
 setup_vim(){
     echo "==================================="
