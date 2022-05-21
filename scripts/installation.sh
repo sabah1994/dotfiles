@@ -99,7 +99,8 @@ function install_zsh() {
     # plugins=(sudo git web-search history zsh-autosuggestions)
     # dont forget fzf
     # git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-    # ~/.fzf/install}
+    # ~/.fzf/install
+}
 
 machine=$(what_os)
 if [ "$machine" == "Mac" ]
