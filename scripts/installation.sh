@@ -90,12 +90,12 @@ install_zsh() {
     echo "Running install ZSH"
     echo "==================================="
 
-    # Link .zshrc file
-    ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
-
     # remove exissting and download oh-my-zsh
     rm -rf ~/.oh-my-zsh
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+    # Link .zshrc file
+    ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
 
     # auto suggestion plugin
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
