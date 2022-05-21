@@ -80,6 +80,20 @@ setup_vim(){
     echo "==================================="
 }
 
+function install_zsh() {
+    echo "==================================="
+    echo "Running install ZSH"
+    echo "==================================="
+    # TODO
+    # install and set zsh as default shell
+    # download oh-my-zsh
+    # set font for terminal
+    # version control zshrc
+    # plugins:
+    # plugins=(sudo git web-search history zsh-autosuggestions)
+    # dont forget fzf
+    # git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    # ~/.fzf/install}
 
 machine=$(what_os)
 if [ "$machine" == "Mac" ]

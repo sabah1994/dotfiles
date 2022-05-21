@@ -55,7 +55,9 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1  " close NERDTree when file open
 set splitright            "open vertical split on right
 set splitbelow            "open horizental split below
-let NERDTreeWinSize = 50   " NT win size
+let NERDTreeWinSize = 50  "NT win size
+let NERDTreeShowHidden=1  "show hidden files
+let NERDTreeIgnore=['\.git$']   "ignore git folder
 
 "do not copy delete command
 nnoremap d "_d
