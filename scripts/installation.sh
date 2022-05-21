@@ -87,16 +87,17 @@ setup_vim(){
 
 install_zsh() {
     echo "==================================="
-    echo "Running install ZSH"
+    echo "Installing oh-my-zsh"
     echo "==================================="
-
     # remove exissting and download oh-my-zsh
     rm -rf ~/.oh-my-zsh
-    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" &
 
+    echo "==================================="
+    echo "Executing rest of zsh related setup "
+    echo "==================================="
     # Link .zshrc file
     ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
-
     # auto suggestion plugin
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     # fzf download and setup
@@ -106,8 +107,6 @@ install_zsh() {
     # set font for terminal
     # preserve powerlevel10k dotfile
     # version control zshrc
-    # plugins:
-    # plugins=(sudo git web-search history zsh-autosuggestions)
 }
 
 machine=$(what_os)
