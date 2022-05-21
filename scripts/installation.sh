@@ -40,6 +40,11 @@ setup_tmux() {
     echo "Linking tmux config"
     echo "==================================="
 
+    if [ "$machine" == "Mac" ]
+    then
+        echo "Installing reattach-to-user-namespace"
+        brew install reattach-to-user-namespace
+    fi
     cd ~/
 
     touch ~/.tmux.conf
@@ -88,6 +93,7 @@ function install_zsh() {
     # install and set zsh as default shell
     # download oh-my-zsh
     # set font for terminal
+    # preserve powerlevel10k dotfile
     # version control zshrc
     # plugins:
     # plugins=(sudo git web-search history zsh-autosuggestions)
