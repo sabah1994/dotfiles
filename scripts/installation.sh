@@ -19,6 +19,7 @@ install_homebrew(){
         echo "==================================="
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
+    brew install reattach-to-user-namespace
 }
 
 install_packages(){
@@ -107,14 +108,16 @@ install_zsh() {
     yes | ~/.fzf/install
 
     # set font for terminal
-    # preserve powerlevel10k dotfile
 }
 
 download_and_setup_powerleveltheme(){
+    echo "==================================="
+    echo "installing and seting up P10k theme"
+    echo "==================================="
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
     ls -sf ~/dotfiles/zsh/.p10k.zsh ~/.p10k.zsh
 }
+
 machine=$(what_os)
 if [ "$machine" == "Mac" ]
 then
