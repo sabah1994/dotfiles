@@ -104,12 +104,17 @@ install_zsh() {
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     # fzf download and setup
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-    ~/.fzf/install
+    yes | ~/.fzf/install
 
     # set font for terminal
     # preserve powerlevel10k dotfile
 }
 
+download_and_setup_powerleveltheme(){
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+    ls -sf ~/dotfiles/zsh/.p10k.zsh ~/.p10k.zsh
+}
 machine=$(what_os)
 if [ "$machine" == "Mac" ]
 then
@@ -130,3 +135,4 @@ install_packages "$install_prefix"
 setup_vim
 setup_tmux
 install_zsh
+download_and_setup_powerleveltheme
