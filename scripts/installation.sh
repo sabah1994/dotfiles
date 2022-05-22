@@ -19,6 +19,7 @@ install_homebrew(){
         echo "==================================="
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
+    brew install reattach-to-user-namespace
 }
 
 install_packages(){
@@ -107,7 +108,6 @@ install_zsh() {
     yes | ~/.fzf/install
 
     # set font for terminal
-    # preserve powerlevel10k dotfile
 }
 
 download_and_setup_powerleveltheme(){
