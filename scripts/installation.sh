@@ -104,7 +104,7 @@ install_zsh() {
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     # fzf download and setup
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-    ~/.fzf/install
+    yes | ~/.fzf/install
 
     # set font for terminal
     # preserve powerlevel10k dotfile
