@@ -88,10 +88,12 @@ setup_vim(){
 install_zsh() {
     echo "==================================="
     echo "Installing oh-my-zsh"
-    echo "==================================="
-    # remove exissting and download oh-my-zsh
+    echo "WARNING: if oh-my-zsh is not installed, this script will end here. Simply run this script again"
+    sleep 5
     rm -rf ~/.oh-my-zsh
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" &
+    echo "WAITING FOR oh-my-zsh to finish installing"
+    sleep 15
 
     echo "==================================="
     echo "Executing rest of zsh related setup "
@@ -106,7 +108,6 @@ install_zsh() {
 
     # set font for terminal
     # preserve powerlevel10k dotfile
-    # version control zshrc
 }
 
 machine=$(what_os)
