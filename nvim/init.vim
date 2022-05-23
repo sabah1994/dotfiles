@@ -65,6 +65,10 @@ nnoremap d "_d
 vnoremap d "_d
 vnoremap p "_dP
 
+" navigate git hunks with h = hun
+nmap ]h <Plug>(GitGutterNextHunk)
+nmap [h <Plug>(GitGutterPrevHunk)
+
 " open coc-defitin in vsplit
 nmap <silent> gv :call CocAction('jumpDefinition', 'vsplit') <CR>
 
