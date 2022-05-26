@@ -99,6 +99,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias up="cd .."
+alias des="cd ~/Desktop"
+alias dev="cd ~/Desktop/development"
+alias dot="cd ~/dotfiles"
+alias notes="cd ~/Desktop/notes"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
