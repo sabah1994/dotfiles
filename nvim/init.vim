@@ -13,6 +13,7 @@ Plug 'PeterRincker/vim-searchlight' " undercursor higlighted text in different c
 Plug 'TaDaa/vimade'                " show inactive windows in different colours
 Plug 'lukas-reineke/indent-blankline.nvim' " indent guide 
 Plug 'airblade/vim-gitgutter' "show git changes on left
+Plug 'psliwka/vim-smoothie' "smooth scroll ALTERNATIVE: 'karb94/neoscroll.nvim'
 call plug#end()
 
 
