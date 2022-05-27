@@ -28,12 +28,14 @@ install_packages(){
     echo "neovim"
     echo "nodejs"
     echo "tmux"
-    echo git
+    echo "git"
+    echo "ripgrep"
     echo "==================================="
     $1 install neovim
     $1 install nodejs
     $1 install tmux
-    # $1 install git
+    $1 install git
+    $1 install ripgrep
 }
 
 setup_tmux() {
