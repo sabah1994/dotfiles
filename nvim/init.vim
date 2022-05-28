@@ -14,6 +14,7 @@ Plug 'TaDaa/vimade'                " show inactive windows in different colours
 Plug 'lukas-reineke/indent-blankline.nvim' " indent guide 
 Plug 'airblade/vim-gitgutter' "show git changes on left
 Plug 'psliwka/vim-smoothie' "smooth scroll ALTERNATIVE: 'karb94/neoscroll.nvim'
+Plug 'unblevable/quick-scope'
 call plug#end()
 
 
@@ -69,6 +70,9 @@ vnoremap p "_dP
 " navigate git hunks with h = hun
 nmap ]h <Plug>(GitGutterNextHunk)
 nmap [h <Plug>(GitGutterPrevHunk)
+
+" Trigger a highlight only when pressing f and F.
+let g:qs_highlight_on_keys = ['f', 'F']
 
 " open coc-defitin in vsplit
 nmap <silent> gv :call CocAction('jumpDefinition', 'vsplit') <CR>
