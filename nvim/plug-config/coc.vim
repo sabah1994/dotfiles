@@ -164,7 +164,11 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-"open buffers
+" Open buffers
 nnoremap <silent><nowait> <space>b  :<C-u>CocList buffers<CR>
 "Open files
 nnoremap <silent><nowait> <space>f  :<C-u>CocList files<CR>
+" Open vim commands
+nnoremap <silent><nowait> <space>v  :<C-u>CocList vimcommands<CR>
+" Open grep
+nnoremap <silent><nowait> <space>g  :<C-u>CocList grep<CR>
