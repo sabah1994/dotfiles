@@ -167,7 +167,7 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " Open buffers
 nnoremap <silent><nowait> <space>b  :<C-u>CocList -A buffers<CR>
 "Open files
-nnoremap <silent><nowait> <space>f  :<C-u>CocList -A files<CR>
+nnoremap <silent><nowait> <space>f  :<C-u>CocList files<CR>
 " Open vim commands
 nnoremap <silent><nowait> <space>v  :<C-u>CocList vimcommands<CR>
 " Open grep
