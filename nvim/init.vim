@@ -34,6 +34,9 @@ let g:coc_global_extensions = [
 let mapleader = ","
 let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
+set foldmethod=indent "fold on indent method
+set nofoldenable      "do not auto create folds when file opens
+set foldnestmax=2     "max nested fold level
 set encoding=utf-8
 set number relativenumber
 syntax on                       "
