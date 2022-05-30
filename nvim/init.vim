@@ -36,10 +36,11 @@ let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 set foldmethod=indent "fold on indent method
 set nofoldenable      "do not auto create folds when file opens
-set foldnestmax=2     "max nested fold level
+set foldnestmax=3     "max nested fold level
+set foldlevel=2       "fold level: zr or zm
 set encoding=utf-8
 set number relativenumber
-syntax on                       "
+syntax on
 set scrolloff=7                 "Allow n lines at the bottom
 set ignorecase                  "ignore case in search
 "4 spaces with tab
@@ -70,6 +71,7 @@ nnoremap d "_d
 vnoremap d "_d
 vnoremap p "_dP
 
+nnoremap <F5> :%y+<CR>
 " navigate git hunks with h = hun
 nmap ]h <Plug>(GitGutterNextHunk)
 nmap [h <Plug>(GitGutterPrevHunk)
