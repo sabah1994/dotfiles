@@ -70,8 +70,13 @@ let NERDTreeIgnore=['\.git$']   "ignore git folder
 nnoremap d "_d
 vnoremap d "_d
 vnoremap p "_dP
-
+" copy whole byffer
 nnoremap <F5> :%y+<CR>
+" Keep jumps and search in middle
+nmap n nzz
+nmap N Nzz
+nmap <C-o> <C-o>zz
+nmap <C-i> <C-i>zz
 " navigate git hunks with h = hun
 nmap ]h <Plug>(GitGutterNextHunk)
 nmap [h <Plug>(GitGutterPrevHunk)
