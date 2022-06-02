@@ -1,20 +1,20 @@
 " PLUGINS
 call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'      "Theme
-Plug 'preservim/nerdtree'   "file directory
-Plug 'ryanoasis/vim-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight' "Correct colour for icons
-Plug 'tpope/vim-commentary' "to comment easily
-Plug 'vim-airline/vim-airline' " Status line
-Plug 'tpope/vim-fugitive' " Needed for git branch in vim-airline
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'honza/vim-snippets'
-Plug 'PeterRincker/vim-searchlight' " undercursor higlighted text in different colour
-Plug 'TaDaa/vimade'                " show inactive windows in different colours
-Plug 'lukas-reineke/indent-blankline.nvim' " indent guide
-Plug 'airblade/vim-gitgutter' "show git changes on left
-Plug 'psliwka/vim-smoothie' "smooth scroll
-Plug 'unblevable/quick-scope'
+Plug 'morhetz/gruvbox'              "Theme
+Plug 'preservim/nerdtree'           "File directory
+Plug 'ryanoasis/vim-devicons'       "File icons
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'      "Correct colour for icons
+Plug 'tpope/vim-commentary'         "Comment easily
+Plug 'vim-airline/vim-airline'      "Status line
+Plug 'tpope/vim-fugitive'           "Needed for git branch in vim-airline
+Plug 'neoclide/coc.nvim', {'branch': 'release'}     "Conquer of Completion
+Plug 'honza/vim-snippets'           "Snippets
+Plug 'PeterRincker/vim-searchlight' "Undercursor higlighted text in different colour
+Plug 'TaDaa/vimade'                 "Show inactive windows in different colours
+Plug 'lukas-reineke/indent-blankline.nvim'          "Indent guide
+Plug 'airblade/vim-gitgutter'       "Show git changes on left
+Plug 'psliwka/vim-smoothie'         "Smooth scroll
+Plug 'unblevable/quick-scope'       "Highlights chars in current line to move easily
 call plug#end()
 
 " Basic configuration
