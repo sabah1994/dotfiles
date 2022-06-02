@@ -11,7 +11,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
 Plug 'PeterRincker/vim-searchlight' " undercursor higlighted text in different colour
 Plug 'TaDaa/vimade'                " show inactive windows in different colours
-Plug 'lukas-reineke/indent-blankline.nvim' " indent guide 
+Plug 'lukas-reineke/indent-blankline.nvim' " indent guide
 Plug 'airblade/vim-gitgutter' "show git changes on left
 Plug 'psliwka/vim-smoothie' "smooth scroll ALTERNATIVE: 'karb94/neoscroll.nvim'
 Plug 'unblevable/quick-scope'
@@ -70,6 +70,8 @@ let NERDTreeIgnore=['\.git$']   "ignore git folder
 nnoremap d "_d
 vnoremap d "_d
 vnoremap p "_dP
+" get rid of trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
 " copy whole byffer
 nnoremap <F5> :%y+<CR>
 " Keep jumps and search in middle
