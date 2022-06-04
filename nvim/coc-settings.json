@@ -25,6 +25,10 @@
         "**/venv/**",
         "**/.git/**"
     ],
+    "list.source.files.args": [
+        "--hidden",
+        "--files"
+    ],
     "suggest.completionItemKindLabels": {
         "method": "  ",
         "function": "  ",
