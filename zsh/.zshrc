@@ -104,6 +104,8 @@ alias des="cd ~/Desktop"
 alias dev="cd ~/Desktop/development"
 alias dot="cd ~/dotfiles"
 alias notes="cd ~/Desktop/notes"
+alias src="source venv/bin/activate"
+alias csrc="python3 -m venv venv"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
