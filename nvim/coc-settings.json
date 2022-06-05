@@ -29,6 +29,10 @@
         "--hidden",
         "--files"
     ],
+    "list.source.grep.excludePatterns": [
+        "**/venv/**",
+        "**/.git/**"
+    ],
     "suggest.completionItemKindLabels": {
         "method": "  ",
         "function": "  ",
