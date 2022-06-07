@@ -111,3 +111,6 @@ alias csrc="python3 -m venv venv"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Replace zsh tab completion with fzf
+source ~/.fzf-tab/fzf-tab.plugin.zsh

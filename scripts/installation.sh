@@ -81,7 +81,7 @@ setup_vim(){
     ln -sf ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
     ln -sf ~/dotfiles/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
     ln -sf ~/dotfiles/nvim/plug-config/coc.vim ~/.config/nvim/plug-config/coc.vim
-    
+
     echo "==================================="
     echo "Vim and neovim setup complete"
     echo "Once this process is complete open vim and run :PlugInstall"
@@ -108,6 +108,10 @@ install_zsh() {
     # fzf download and setup
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
     yes | ~/.fzf/install
+
+    #fzf-tab (replaces zsh default tab completion with fuzzy finder)
+    git clone https://github.com/Aloxaf/fzf-tab.git ~/.fzf-tab
+    #sourced in ~/.zshrc
 
     # set font for terminal
 }
