@@ -1,6 +1,7 @@
 " PLUGINS
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'              "Theme
+" Plug 'tanvirtin/monokai.nvim'     "TODO: make this work (like bat theme)
 Plug 'preservim/nerdtree'           "File directory
 Plug 'ryanoasis/vim-devicons'       "File icons
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'      "Correct colour for icons
