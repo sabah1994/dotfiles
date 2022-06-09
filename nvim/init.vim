@@ -50,8 +50,8 @@ nnoremap d "_d
 vnoremap d "_d
 vnoremap p "_dP
 "move at the start and end of line easily
-nmap H ^
-nmap L $
+map H ^
+map L $
 "keep jumps and search in middle
 nmap n nzz
 nmap N Nzz
