@@ -18,6 +18,7 @@ alias dot="cd ~/dotfiles"
 alias notes="cd ~/Desktop/notes"
 alias src="source venv/bin/activate"
 alias csrc="python3 -m venv venv"
+alias fp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
