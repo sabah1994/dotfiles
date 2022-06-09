@@ -81,6 +81,7 @@ setup_vim(){
     ln -sf ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
     ln -sf ~/dotfiles/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
     ln -sf ~/dotfiles/nvim/plug-config/coc.vim ~/.config/nvim/plug-config/coc.vim
+    ln -sf ~/dotfiles/nvim/after/syntax/python.vim ~/.config/nvim/after/syntax/python.vim
 
     echo "==================================="
     echo "Vim and neovim setup complete"
