@@ -52,6 +52,9 @@ vnoremap p "_dP
 "move at the start and end of line easily
 map H ^
 map L $
+" move between buffers
+nmap <leader>b :bn<CR>
+nmap <leader>B :bp<CR>
 "keep jumps and search in middle
 nmap n nzz
 nmap N Nzz
