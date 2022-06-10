@@ -55,6 +55,13 @@ map L $
 " move between buffers
 nmap <leader>b :bn<CR>
 nmap <leader>B :bp<CR>
+" move code alt+arrows
+nnoremap <silent> <M-Up>    :<C-U>exec "exec 'norm m`' \| move -" . (1+v:count1)<CR>``
+nnoremap <silent> <M-Down>  :<C-U>exec "exec 'norm m`' \| move +" . (0+v:count1)<CR>``
+inoremap <silent> <M-Up>    <C-O>m`<C-O>:move -2<CR><C-O>``
+inoremap <silent> <M-Down>  <C-O>m`<C-O>:move +1<CR><C-O>``
+vnoremap <silent> <M-Up>    :<C-U>exec "'<,'>move '<-" . (1+v:count1)<CR>gv
+vnoremap <silent> <M-Down>  :<C-U>exec "'<,'>move '>+" . (0+v:count1)<CR>gv
 "keep jumps and search in middle
 nmap n nzz
 nmap N Nzz
