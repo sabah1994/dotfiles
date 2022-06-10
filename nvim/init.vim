@@ -74,6 +74,10 @@ nnoremap <F5> :%y+<CR>
 "Escape: also clears highlighting
 nnoremap <silent> <esc> <Cmd>noh<return><esc>
 
+" Text objects
+" inner line
+xnoremap il ^og_
+
 "PLUGINS configuration
 let g:python3_host_prog="~/vim_venv/bin/python"
 
