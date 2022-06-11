@@ -48,7 +48,9 @@ set clipboard=unnamedplus          "copy to system clipboard
 "do not copy delete command
 nnoremap d "_d
 vnoremap d "_d
-vnoremap p "_dP
+"in V Line mode, don't delete line break if text in register doesn't have line
+"break. DON'T stupidly join pasted text to below line
+vnoremap <expr> p mode() ==# "V" && match(getreg(), "\n$") == -1 ? "<esc>^vg_\"_dP" : "\"_dP"
 "move at the start and end of line easily
 noremap H ^
 noremap L $
