@@ -50,11 +50,11 @@ nnoremap d "_d
 vnoremap d "_d
 vnoremap p "_dP
 "move at the start and end of line easily
-map H ^
-map L $
+noremap H ^
+noremap L $
 " move between buffers
-nmap <leader>b :bn<CR>
-nmap <leader>B :bp<CR>
+nnoremap <leader>b :bn<CR>
+nnoremap <leader>B :bp<CR>
 " move code alt+arrows
 nnoremap <silent> <M-Up>    :<C-U>exec "exec 'norm m`' \| move -" . (1+v:count1)<CR>``
 nnoremap <silent> <M-Down>  :<C-U>exec "exec 'norm m`' \| move +" . (0+v:count1)<CR>``
@@ -63,10 +63,10 @@ inoremap <silent> <M-Down>  <C-O>m`<C-O>:move +1<CR><C-O>``
 vnoremap <silent> <M-Up>    :<C-U>exec "'<,'>move '<-" . (1+v:count1)<CR>gv
 vnoremap <silent> <M-Down>  :<C-U>exec "'<,'>move '>+" . (0+v:count1)<CR>gv
 "keep jumps and search in middle
-nmap n nzz
-nmap N Nzz
-nmap <C-o> <C-o>zz
-nmap <C-i> <C-i>zz
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap <C-o> <C-o>zz
+nnoremap <C-i> <C-i>zz
 "get rid of trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 "copy whole buffer
@@ -93,8 +93,6 @@ let g:coc_global_extensions = [
 \ 'coc-lists',
 \ 'coc-sh'
 \ ]
-" open coc-defitin in vsplit
-nmap <silent> gv :call CocAction('jumpDefinition', 'vsplit') <CR>
 
 "gruvbox | statusline
 let g:gruvbox_contrast_dark = 'hard'
