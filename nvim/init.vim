@@ -51,6 +51,9 @@ vnoremap d "_d
 "in V Line mode, don't delete line break if text in register doesn't have line
 "break. DON'T stupidly join pasted text to below line
 vnoremap <expr> p mode() ==# "V" && match(getreg(), "\n$") == -1 ? "<esc>^vg_\"_dP" : "\"_dP"
+"paste text on new line
+nnoremap <leader>p o<esc>p
+nnoremap <leader>P O<esc>p
 "move at the start and end of line easily
 noremap H ^
 noremap L $
