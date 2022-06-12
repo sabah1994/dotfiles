@@ -17,6 +17,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'          "Indent guide
 Plug 'airblade/vim-gitgutter'       "Show git changes on left
 Plug 'psliwka/vim-smoothie'         "Smooth scroll
 Plug 'unblevable/quick-scope'       "Highlights chars in current line to move easily
+Plug 'justinmk/vim-sneak'           "Easy motions vertically
 call plug#end()
 
 "true colours for nvim in tmux
@@ -123,8 +124,17 @@ nmap [h <Plug>(GitGutterPrevHunk)
 
 "quick-scope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-highlight QuickScopePrimary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
-highlight QuickScopeSecondary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
+highlight QuickScopePrimary guifg='#00dfff' gui=bold,underline ctermfg=45 cterm=bold,underline
+highlight QuickScopeSecondary guifg='#afff5f' gui=bold,underline ctermfg=155 cterm=bold,underline
+
+"vim-sneak
+let g:sneak#label = 1
+"This is to avoid ; , being mapped by sneak
+map <F10> <Plug>Sneak_,
+map <F10> <Plug>Sneak_;
+highlight SneakLabel guifg='#5fffff' gui=bold,underline ctermfg=45 cterm=underline
+highlight SneakScope guifg='#5fffff' guibg=black gui=bold,underline ctermfg=45 cterm=underline
+" NOTE: uses z in operater pending mode. e.g dz{char}{char}
 
 source $HOME/.config/nvim/plug-config/coc.vim
 
