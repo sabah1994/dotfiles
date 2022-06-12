@@ -18,6 +18,7 @@ Plug 'airblade/vim-gitgutter'       "Show git changes on left
 Plug 'psliwka/vim-smoothie'         "Smooth scroll
 Plug 'unblevable/quick-scope'       "Highlights chars in current line to move easily
 Plug 'justinmk/vim-sneak'           "Easy motions vertically
+Plug 'tpope/vim-surround'           "Easy text-object sorrounding plugin
 call plug#end()
 
 "true colours for nvim in tmux
