@@ -18,6 +18,7 @@ Plug 'airblade/vim-gitgutter'       "Show git changes on left
 Plug 'psliwka/vim-smoothie'         "Smooth scroll
 Plug 'unblevable/quick-scope'       "Highlights chars in current line to move easily
 Plug 'justinmk/vim-sneak'           "Easy motions vertically
+Plug 'tpope/vim-surround'           "Easy text-object sorrounding plugin
 call plug#end()
 
 "true colours for nvim in tmux
@@ -132,7 +133,7 @@ let g:sneak#label = 1
 "This is to avoid ; , being mapped by sneak
 map <F10> <Plug>Sneak_,
 map <F10> <Plug>Sneak_;
-highlight SneakLabel guifg='#5fffff' gui=bold,underline ctermfg=45 cterm=underline
+highlight SneakLabel guifg='#5fffff' guibg=black gui=bold,underline ctermfg=45 cterm=underline
 highlight SneakScope guifg='#afff5f' guibg=black gui=bold,underline ctermfg=45 cterm=underline
 " NOTE: uses z in operater pending mode. e.g dz{char}{char}
 
