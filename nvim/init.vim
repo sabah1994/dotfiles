@@ -133,7 +133,7 @@ let g:sneak#label = 1
 map <F10> <Plug>Sneak_,
 map <F10> <Plug>Sneak_;
 highlight SneakLabel guifg='#5fffff' gui=bold,underline ctermfg=45 cterm=underline
-highlight SneakScope guifg='#5fffff' guibg=black gui=bold,underline ctermfg=45 cterm=underline
+highlight SneakScope guifg='#afff5f' guibg=black gui=bold,underline ctermfg=45 cterm=underline
 " NOTE: uses z in operater pending mode. e.g dz{char}{char}
 
 source $HOME/.config/nvim/plug-config/coc.vim
