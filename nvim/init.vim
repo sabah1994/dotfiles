@@ -53,9 +53,9 @@ vnoremap d "_d
 "in V Line mode, don't delete line break if text in register doesn't have line
 "break. DON'T stupidly join pasted text to below line
 vnoremap <expr> p mode() ==# "V" && match(getreg(), "\n$") == -1 ? "\"_dd<esc>O<esc>p" : "\"_dP"
-"paste text on new line
-nnoremap <leader>p o<esc>p
-nnoremap <leader>P O<esc>p
+"paste text on new line, if there is already linebreak do not insert a new one
+nnoremap <expr> <leader>p  match(getreg(), "\n$") == -1 ? "o<esc>p" : "p"
+nnoremap <expr> <leader>P  match(getreg(), "\n$") == -1 ? "O<esc>p" : "P"
 "move at the start and end of line easily
 noremap H ^
 noremap L $
@@ -133,7 +133,7 @@ let g:sneak#label = 1
 "This is to avoid ; , being mapped by sneak
 map <F10> <Plug>Sneak_,
 map <F10> <Plug>Sneak_;
-highlight SneakLabel guifg='#5fffff' gui=bold,underline ctermfg=45 cterm=underline
+highlight SneakLabel guifg='#5fffff' guibg=black gui=bold,underline ctermfg=45 cterm=underline
 highlight SneakScope guifg='#afff5f' guibg=black gui=bold,underline ctermfg=45 cterm=underline
 " NOTE: uses z in operater pending mode. e.g dz{char}{char}
 
