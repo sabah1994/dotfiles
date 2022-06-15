@@ -119,6 +119,15 @@ let NERDTreeWinSize = 50  "NT win size
 let NERDTreeShowHidden=1  "show hidden files
 let NERDTreeIgnore=['\.git$', 'venv$', '__pycache__$']   "ignore git folder
 
+"vim-fugitive
+noremap <leader>gv :Gvdiffsplit<CR>
+" git checkout --filename at buffer level (use undo to revert checkout)
+noremap <leader>gc :Gread<CR>
+"Git add --filename
+noremap <leader>ga :Gwrite<CR>
+noremap <leader>gd :G diff<CR>
+noremap <leader>gds :G diff --staged<CR>
+
 "vim-gitgutter
 nmap ]h <Plug>(GitGutterNextHunk)
 nmap [h <Plug>(GitGutterPrevHunk)
