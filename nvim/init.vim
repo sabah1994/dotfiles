@@ -131,6 +131,10 @@ noremap <leader>gds :G diff --staged<CR>
 "vim-gitgutter
 nmap ]h <Plug>(GitGutterNextHunk)
 nmap [h <Plug>(GitGutterPrevHunk)
+omap ih <Plug>(GitGutterTextObjectInnerPending)
+omap ah <Plug>(GitGutterTextObjectOuterPending)
+xmap ih <Plug>(GitGutterTextObjectInnerVisual)
+xmap ah <Plug>(GitGutterTextObjectOuterVisual)
 
 "quick-scope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
