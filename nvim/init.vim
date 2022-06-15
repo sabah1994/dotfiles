@@ -127,10 +127,17 @@ noremap <leader>gc :Gread<CR>
 noremap <leader>ga :Gwrite<CR>
 noremap <leader>gd :G diff<CR>
 noremap <leader>gds :G diff --staged<CR>
+" Notes: useful commands
+" Git blame       - Open git blame on left, press o open the commit
+" Git difftool    - Open diff for current buffer in quickfix list
+" Git difftool -y - Open all git modifed files in a new tab
+" Gclog           - Open commit history in quick fix list (use cn and cp to
+" jump between quickfix items)
 
 "vim-gitgutter
 nmap ]h <Plug>(GitGutterNextHunk)
 nmap [h <Plug>(GitGutterPrevHunk)
+"text-objects
 omap ih <Plug>(GitGutterTextObjectInnerPending)
 omap ah <Plug>(GitGutterTextObjectOuterPending)
 xmap ih <Plug>(GitGutterTextObjectInnerVisual)
