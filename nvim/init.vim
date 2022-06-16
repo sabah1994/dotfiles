@@ -7,6 +7,7 @@ Plug 'ryanoasis/vim-devicons'       "File icons
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'      "Correct colour for icons
 Plug 'tpope/vim-commentary'         "Comment easily
 Plug 'vim-airline/vim-airline'      "Status line
+Plug 'bling/vim-bufferline'         "Buffers in statusline
 Plug 'tpope/vim-fugitive'           "Needed for git branch in vim-airline
 Plug 'neoclide/coc.nvim', {'branch': 'release'}     "Conquer of Completion
 Plug 'honza/vim-snippets'           "Snippets
@@ -108,8 +109,14 @@ colorscheme gruvbox
 
 "vim-airline | statusline
 let g:airline_theme='dark'
-let g:airline#extensions#tabline#enabled = 1 "Enable the list of buffers top
 let g:airline#extensions#branch#enabled=1
+let g:airline_powerline_fonts = 1
+
+" vim-bufferline
+let g:bufferline_echo = 0  "do not echo to command line
+"To keep active buffer at the first position
+" let g:bufferline_rotate = 1
+" let g:bufferline_fixed_index =  0 "always first
 
 "nerdtree
 map <silent> <C-n> :NERDTreeToggle<CR>
