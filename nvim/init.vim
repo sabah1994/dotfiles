@@ -62,8 +62,8 @@ nnoremap <expr> <leader>P  match(getreg(), "\n$") == -1 ? "O<esc>p" : "P"
 noremap H ^
 noremap L $
 " move between buffers
-nnoremap <leader>b :bn<CR>
-nnoremap <leader>B :bp<CR>
+nnoremap <leader>n :bn<CR>
+nnoremap <leader>b :bp<CR>
 " move code alt+arrows
 nnoremap <silent> <M-Up>    :<C-U>exec "exec 'norm m`' \| move -" . (1+v:count1)<CR>``
 nnoremap <silent> <M-Down>  :<C-U>exec "exec 'norm m`' \| move +" . (0+v:count1)<CR>``
