@@ -36,6 +36,8 @@ install_packages(){
     $1 install tmux
     $1 install git
     $1 install ripgrep
+    sudo npm -g install tree-sitter-cli
+    sudo npm -g install tree-sitter
 }
 
 setup_tmux() {

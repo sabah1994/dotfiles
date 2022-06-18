@@ -1,7 +1,20 @@
 lua << EOF
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = { "c", "python", "java", "bash", "vim", "comment"},
+    -- TS parsers
+    ensure_installed = { "c",
+        "python",
+        "java",
+        "bash",
+        "vim",
+        "comment",
+        "json",
+        "javascript",
+        "typescript",
+        "html",
+        "css"
+    },
 
+    -- TS modules
     highlight = {
         enable = true,
         disable = {"rust" },
