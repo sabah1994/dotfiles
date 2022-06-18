@@ -23,6 +23,9 @@
     "python.formatting.blackPath": "~/vim_venv/bin/black",
     "list.source.files.excludePatterns": [
         "**/venv/**",
+        "**/node_modules/**",
+        "**/node_modules/**/.*",
+        "**/node_modules/**/.*/**",
         "**/.git/**"
     ],
     "list.source.files.args": [
