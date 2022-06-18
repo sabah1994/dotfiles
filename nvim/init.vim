@@ -2,7 +2,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'              "Theme
 Plug 'preservim/nerdtree'           "File directory
-Plug 'sheerun/vim-polyglot'         "Syntax highlight
 Plug 'ryanoasis/vim-devicons'       "File icons
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'      "Correct colour for icons
 Plug 'tpope/vim-commentary'         "Comment easily
@@ -19,7 +18,7 @@ Plug 'psliwka/vim-smoothie'         "Smooth scroll
 Plug 'unblevable/quick-scope'       "Highlights chars in current line to move easily
 Plug 'justinmk/vim-sneak'           "Easy motions vertically
 Plug 'tpope/vim-surround'           "Easy text-object sorrounding plugin
-Plug 'pseewald/vim-anyfold'         "Fold plugin
+Plug 'nvim-treesitter/nvim-treesitter', {'do':':TSUpdate'}      "Syntax tree plugin
 call plug#end()
 
 "true colours for nvim in tmux
@@ -31,8 +30,8 @@ endif
 
 " Basic configuration
 let mapleader = ","
-" set foldmethod=indent "fold on indent method, (commenting this out as
-" vim-anyfold seems like a better approach)
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 set nofoldenable      "do not auto create folds when file opens
 set foldnestmax=3     "max nested fold level
 set foldlevel=2       "fold level: zr or zm
@@ -165,9 +164,6 @@ highlight SneakLabel guifg='#5fffff' guibg=black gui=bold,underline ctermfg=45 c
 highlight SneakScope guifg='#afff5f' guibg=black gui=bold,underline ctermfg=45 cterm=underline
 " NOTE: uses z in operater pending mode. e.g dz{char}{char}
 
-"vim-anyfold
-autocmd Filetype sh,python AnyFoldActivate
-let g:anyfold_motion=0
-
+source $HOME/.config/nvim/plug-config/tree-sitter.vim
 source $HOME/.config/nvim/plug-config/coc.vim
 
