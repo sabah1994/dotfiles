@@ -11,6 +11,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='nvim'
 
 # aliasas
+# easy cd
 alias up="cd .."
 alias des="cd ~/Desktop"
 alias dev="cd ~/Desktop/development"
@@ -19,9 +20,18 @@ alias notes="cd ~/Desktop/notes"
 alias testP="cd ~/Desktop/test/python"
 alias testJ="cd ~/Desktop/test/java"
 alias testJS="cd ~/Desktop/test/JS"
+
+# py
 alias src="source venv/bin/activate"
 alias csrc="python3 -m venv venv"
+
+# programs
+alias v="nvim"
+
+# others
 alias fp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+alias cat="bat"
+
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
