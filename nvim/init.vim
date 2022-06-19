@@ -16,7 +16,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'          "Indent guide
 Plug 'airblade/vim-gitgutter'       "Show git changes on left
 Plug 'psliwka/vim-smoothie'         "Smooth scroll
 Plug 'unblevable/quick-scope'       "Highlights chars in current line to move easily
-Plug 'justinmk/vim-sneak'           "Easy motions vertically
+Plug 'phaazon/hop.nvim'             "Easy hop around
 Plug 'tpope/vim-surround'           "Easy text-object sorrounding plugin
 Plug 'nvim-treesitter/nvim-treesitter', {'do':':TSUpdate'}      "Syntax tree plugin
 call plug#end()
@@ -60,9 +60,10 @@ nnoremap <expr> <leader>P  match(getreg(), "\n$") == -1 ? "O<esc>p" : "P"
 "move at the start and end of line easily
 noremap H ^
 noremap L $
-" move between buffers
+" buffers shortcuts
 nnoremap <leader>n :bn<CR>
-nnoremap <leader>b :bp<CR>
+nnoremap <leader>p :bp<CR>
+nnoremap <leader>d :bd<CR>
 " move code alt+arrows
 nnoremap <silent> <M-Up>    :<C-U>exec "exec 'norm m`' \| move -" . (1+v:count1)<CR>``
 nnoremap <silent> <M-Down>  :<C-U>exec "exec 'norm m`' \| move +" . (0+v:count1)<CR>``
@@ -155,14 +156,15 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 highlight QuickScopePrimary guifg='#00dfff' gui=bold,underline ctermfg=45 cterm=bold,underline
 highlight QuickScopeSecondary guifg='#afff5f' gui=bold,underline ctermfg=155 cterm=bold,underline
 
-"vim-sneak
-let g:sneak#label = 1
-"This is to avoid ; , being mapped by sneak
-map <F10> <Plug>Sneak_,
-map <F10> <Plug>Sneak_;
-highlight SneakLabel guifg='#5fffff' guibg=black gui=bold,underline ctermfg=45 cterm=underline
-highlight SneakScope guifg='#afff5f' guibg=black gui=bold,underline ctermfg=45 cterm=underline
-" NOTE: uses z in operater pending mode. e.g dz{char}{char}
+" hop.vim
+lua << EOF
+require'hop'.setup()
+EOF
+"Not mapping s in operator mode because it's taken by surround
+nmap s <cmd>HopChar2<CR>
+vmap s <cmd>HopChar2<CR>
+map <leader>l <cmd>HopLine<CR>
+map <leader>w <cmd>HopWord<CR>
 
 source $HOME/.config/nvim/plug-config/tree-sitter.vim
 source $HOME/.config/nvim/plug-config/coc.vim
