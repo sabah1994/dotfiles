@@ -123,6 +123,20 @@ download_and_setup_powerleveltheme(){
     ln -sf ~/dotfiles/zsh/.p10k.zsh ~/.p10k.zsh
 }
 
+install_font(){
+    if [ "$1" == "Linux" ]
+    then
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
+        echo "==================================="
+        echo "JetBrains Mono font installed, Set it in terminal preference"
+        echo "==================================="
+        return
+    fi
+    echo "==================================="
+    echo "Please visit https://www.jetbrains.com/lp/mono/ and install the font"
+    echo "==================================="
+}
+
 machine=$(what_os)
 if [ "$machine" == "Mac" ]
 then
@@ -144,3 +158,4 @@ setup_vim
 setup_tmux
 install_zsh
 download_and_setup_powerleveltheme
+install_font $machine
