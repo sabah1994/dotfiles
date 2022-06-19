@@ -166,6 +166,9 @@ vmap s <cmd>HopChar2<CR>
 map <leader>l <cmd>HopLine<CR>
 map <leader>w <cmd>HopWord<CR>
 
+" vimade
+nmap <leader>tf :VimadeToggle<CR>
+
 source $HOME/.config/nvim/plug-config/tree-sitter.vim
 source $HOME/.config/nvim/plug-config/coc.vim
 
