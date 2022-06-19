@@ -62,7 +62,7 @@ noremap H ^
 noremap L $
 " buffers shortcuts
 nnoremap <leader>n :bn<CR>
-nnoremap <leader>p :bp<CR>
+nnoremap <leader>b :bp<CR>
 nnoremap <leader>d :bd<CR>
 " move code alt+arrows
 nnoremap <silent> <M-Up>    :<C-U>exec "exec 'norm m`' \| move -" . (1+v:count1)<CR>``

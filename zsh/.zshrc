@@ -32,6 +32,10 @@ alias v="nvim"
 alias fp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
 alias cat="bat"
 
+# Better colour for directory in ls
+LS_COLORS=$LS_COLORS:'di=1;36:' ; export LS_COLORS
+# style for fzf-tab ls
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
