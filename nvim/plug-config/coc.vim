@@ -155,7 +155,7 @@ nnoremap <silent><nowait> <leader>a  :<C-u>CocList diagnostics<cr>
 " on right
 nnoremap <silent><nowait> <leader>o  :<C-u>CocList outline<cr>
 " Open buffers
-nnoremap <silent><nowait> <leader>b  :<C-u>CocList -A buffers<CR>
+nnoremap <silent><nowait> <leader>bl  :<C-u>CocList -A buffers<CR>
 "Open files
 nnoremap <silent><nowait> <leader>f  :<C-u>CocList files<CR>
 " Open grep

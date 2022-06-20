@@ -46,6 +46,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set clipboard=unnamedplus          "copy to system clipboard
+" better split window locations
+set splitright
+set splitbelow
 
 
 "MY KEY MAPPINGS
@@ -61,10 +64,22 @@ nnoremap <expr> <leader>P  match(getreg(), "\n$") == -1 ? "O<esc>p" : "P"
 "move at the start and end of line easily
 noremap H ^
 noremap L $
-" buffers shortcuts
-nnoremap <leader>l :bn<CR>
-nnoremap <leader>h :bp<CR>
-nnoremap <leader>d :bd<CR>
+
+" Buffers shortcuts
+nnoremap <leader>l :bnext<CR>
+" TODO timeout wait is pretty annoying because of hunk mappings
+nnoremap <leader>h :bprevious<CR>
+nnoremap <leader>bd :bdelete<CR>
+nnoremap <leader>bw :write<CR>
+
+" Easier split window
+nnoremap <leader>\| :vsplit<CR>
+nnoremap <leader>- :split<CR>
+
+" Edit common files quickly
+nnoremap <Leader>ev :edit $MYVIMRC<cr>
+nnoremap <Leader>ez :edit ~/.zshrc<cr>
+
 " move code alt+arrows
 nnoremap <silent> <M-Up>    :<C-U>exec "exec 'norm m`' \| move -" . (1+v:count1)<CR>``
 nnoremap <silent> <M-Down>  :<C-U>exec "exec 'norm m`' \| move +" . (0+v:count1)<CR>``
@@ -72,6 +87,7 @@ inoremap <silent> <M-Up>    <C-O>m`<C-O>:move -2<CR><C-O>``
 inoremap <silent> <M-Down>  <C-O>m`<C-O>:move +1<CR><C-O>``
 vnoremap <silent> <M-Up>    :<C-U>exec "'<,'>move '<-" . (1+v:count1)<CR>gv
 vnoremap <silent> <M-Down>  :<C-U>exec "'<,'>move '>+" . (0+v:count1)<CR>gv
+
 "keep jumps and search in middle
 nnoremap n nzz
 nnoremap N Nzz
