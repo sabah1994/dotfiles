@@ -29,7 +29,8 @@ if exists('+termguicolors')
 endif
 
 " Basic configuration
-let mapleader = ","
+let mapleader = " "
+nnoremap <SPACE> <Nop>
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 set nofoldenable      "do not auto create folds when file opens
@@ -61,8 +62,8 @@ nnoremap <expr> <leader>P  match(getreg(), "\n$") == -1 ? "O<esc>p" : "P"
 noremap H ^
 noremap L $
 " buffers shortcuts
-nnoremap <leader>n :bn<CR>
-nnoremap <leader>b :bp<CR>
+nnoremap <leader>l :bn<CR>
+nnoremap <leader>h :bp<CR>
 nnoremap <leader>d :bd<CR>
 " move code alt+arrows
 nnoremap <silent> <M-Up>    :<C-U>exec "exec 'norm m`' \| move -" . (1+v:count1)<CR>``
@@ -163,8 +164,10 @@ EOF
 "Not mapping s in operator mode because it's taken by surround
 nmap s <cmd>HopChar2<CR>
 vmap s <cmd>HopChar2<CR>
-map <leader>l <cmd>HopLine<CR>
-map <leader>w <cmd>HopWord<CR>
+map <leader>k <cmd>HopLineBC<CR>
+map <leader>j <cmd>HopLineAC<CR>
+map <leader><leader>k <cmd>HopWordBC<CR>
+map <leader><leader>j <cmd>HopWordAC<CR>
 
 " vimade
 nmap <leader>tf :VimadeToggle<CR>
