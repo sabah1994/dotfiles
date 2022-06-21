@@ -67,7 +67,6 @@ noremap L $
 
 " Buffers shortcuts
 nnoremap <leader>l :bnext<CR>
-" TODO timeout wait is pretty annoying because of hunk mappings
 nnoremap <leader>h :bprevious<CR>
 nnoremap <leader>bd :bdelete<CR>
 nnoremap <leader>bw :write<CR>
@@ -138,8 +137,6 @@ let g:bufferline_echo = 0  "do not echo to command line
 "nerdtree
 map <silent> <C-n> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1  " close NERDTree when file open
-set splitright            "open vertical split on right
-set splitbelow            "open horizental split below
 let NERDTreeWinSize = 50  "NT win size
 let NERDTreeShowHidden=1  "show hidden files
 let NERDTreeIgnore=['\.git$', 'venv$', '__pycache__$']   "ignore git folder
@@ -162,6 +159,10 @@ noremap <leader>gds :G diff --staged<CR>
 "vim-gitgutter
 nmap ]h <Plug>(GitGutterNextHunk)
 nmap [h <Plug>(GitGutterPrevHunk)
+nmap <leader>ghs <Plug>(GitGutterStageHunk)
+xmap <leader>ghs <Plug>(GitGutterStageHunk)
+nmap <leader>ghu <Plug>(GitGutterUndoHunk)
+nmap <leader>ghp <Plug>(GitGutterPreviewHunk)
 "text-objects
 omap ih <Plug>(GitGutterTextObjectInnerPending)
 omap ah <Plug>(GitGutterTextObjectOuterPending)
