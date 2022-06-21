@@ -162,6 +162,10 @@ noremap <leader>gds :G diff --staged<CR>
 "vim-gitgutter
 nmap ]h <Plug>(GitGutterNextHunk)
 nmap [h <Plug>(GitGutterPrevHunk)
+nmap <leader>ghs <Plug>(GitGutterStageHunk)
+xmap <leader>ghs <Plug>(GitGutterStageHunk)
+nmap <leader>ghu <Plug>(GitGutterUndoHunk)
+nmap <leader>ghp <Plug>(GitGutterPreviewHunk)
 "text-objects
 omap ih <Plug>(GitGutterTextObjectInnerPending)
 omap ah <Plug>(GitGutterTextObjectOuterPending)
