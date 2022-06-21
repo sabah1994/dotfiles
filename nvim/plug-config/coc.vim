@@ -106,7 +106,9 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 " Remap keys for applying codeAction to the current buffer.
 nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
+" NOTE: haven't found a use case for it yet. makes quit shortcut wait.
+" Therefore disabling it for now
+" nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
@@ -155,7 +157,7 @@ nnoremap <silent><nowait> <leader>a  :<C-u>CocList diagnostics<cr>
 " on right
 nnoremap <silent><nowait> <leader>o  :<C-u>CocList outline<cr>
 " Open buffers
-nnoremap <silent><nowait> <leader>bl  :<C-u>CocList -A buffers<CR>
+nnoremap <silent><nowait> <leader>b  :<C-u>CocList -A buffers<CR>
 "Open files
 nnoremap <silent><nowait> <leader>f  :<C-u>CocList files<CR>
 " Open grep
