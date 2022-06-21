@@ -19,6 +19,7 @@ Plug 'unblevable/quick-scope'       "Highlights chars in current line to move ea
 Plug 'phaazon/hop.nvim'             "Easy hop around
 Plug 'tpope/vim-surround'           "Easy text-object sorrounding plugin
 Plug 'nvim-treesitter/nvim-treesitter', {'do':':TSUpdate'}      "Syntax tree plugin
+Plug 'christoomey/vim-tmux-navigator'             "Easy navigation between tmux panes and vim windows
 call plug#end()
 
 "true colours for nvim in tmux
@@ -67,10 +68,10 @@ noremap L $
 
 " Buffers shortcuts
 nnoremap <leader>l :bnext<CR>
-" TODO timeout wait is pretty annoying because of hunk mappings
 nnoremap <leader>h :bprevious<CR>
-nnoremap <leader>bd :bdelete<CR>
-nnoremap <leader>bw :write<CR>
+nnoremap <leader>d :bdelete<CR>
+nnoremap <leader>w :write<CR>
+nnoremap <leader>q :quit<CR>
 
 " Easier split window
 nnoremap <leader>\| :vsplit<CR>
@@ -138,8 +139,6 @@ let g:bufferline_echo = 0  "do not echo to command line
 "nerdtree
 map <silent> <C-n> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1  " close NERDTree when file open
-set splitright            "open vertical split on right
-set splitbelow            "open horizental split below
 let NERDTreeWinSize = 50  "NT win size
 let NERDTreeShowHidden=1  "show hidden files
 let NERDTreeIgnore=['\.git$', 'venv$', '__pycache__$']   "ignore git folder

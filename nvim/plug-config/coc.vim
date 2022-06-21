@@ -29,14 +29,11 @@ else
   set signcolumn=yes
 endif
 
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
+inoremap <silent><expr> <C-J>
       \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ <SID>check_back_space() ? "\<C-J>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr><C-K> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -106,7 +103,9 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 " Remap keys for applying codeAction to the current buffer.
 nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
+" NOTE: haven't found a use case for it yet. makes quit shortcut wait.
+" Therefore disabling it for now
+" nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
@@ -155,7 +154,7 @@ nnoremap <silent><nowait> <leader>a  :<C-u>CocList diagnostics<cr>
 " on right
 nnoremap <silent><nowait> <leader>o  :<C-u>CocList outline<cr>
 " Open buffers
-nnoremap <silent><nowait> <leader>bl  :<C-u>CocList -A buffers<CR>
+nnoremap <silent><nowait> <leader>b  :<C-u>CocList -A buffers<CR>
 "Open files
 nnoremap <silent><nowait> <leader>f  :<C-u>CocList files<CR>
 " Open grep
