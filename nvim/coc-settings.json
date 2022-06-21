@@ -1,4 +1,12 @@
 {
+    // Refer to this link https://github.com/neoclide/coc.nvim/blob/master/data/schema.json
+    "diagnostic.errorSign": "✘",
+    "diagnostic.warningSign": "",
+    "diagnostic.infoSign": "",
+    "diagnostic.hintSign": "",
+    "diagnostic.enableMessage": "jump",
+    "diagnostic.virtualText": true,
+    "diagnostic.virtualTextPrefix": "        ",
     "snippets.extends": {
         "javascript": [
             "html"

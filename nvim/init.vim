@@ -123,12 +123,15 @@ let g:coc_global_extensions = [
 
 "gruvbox | statusline
 let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_sign_column = "bg0"
 colorscheme gruvbox
 
 "vim-airline | statusline
 let g:airline_theme='dark'
 let g:airline#extensions#branch#enabled=1
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#coc#error_symbol=" "
+let g:airline#extensions#coc#warning_symbol=" "
 
 " vim-bufferline
 let g:bufferline_echo = 0  "do not echo to command line
