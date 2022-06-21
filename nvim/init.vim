@@ -68,8 +68,9 @@ noremap L $
 " Buffers shortcuts
 nnoremap <leader>l :bnext<CR>
 nnoremap <leader>h :bprevious<CR>
-nnoremap <leader>bd :bdelete<CR>
-nnoremap <leader>bw :write<CR>
+nnoremap <leader>d :bdelete<CR>
+nnoremap <leader>w :write<CR>
+nnoremap <leader>q :quit<CR>
 
 " Easier split window
 nnoremap <leader>\| :vsplit<CR>
