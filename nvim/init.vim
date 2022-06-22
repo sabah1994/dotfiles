@@ -125,9 +125,10 @@ let g:coc_global_extensions = [
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_sign_column = "bg0"
 colorscheme gruvbox
+hi! CocHintSign guifg=#f5e342
 
 "vim-airline | statusline
-let g:airline_theme='dark'
+let g:airline_theme='gruvbox'
 let g:airline#extensions#branch#enabled=1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#coc#error_symbol=" "
