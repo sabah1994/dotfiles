@@ -20,6 +20,7 @@ Plug 'phaazon/hop.nvim'             "Easy hop around
 Plug 'tpope/vim-surround'           "Easy text-object sorrounding plugin
 Plug 'nvim-treesitter/nvim-treesitter', {'do':':TSUpdate'}      "Syntax tree plugin
 Plug 'christoomey/vim-tmux-navigator'             "Easy navigation between tmux panes and vim windows
+Plug 'mhinz/vim-startify'           "Startup screen
 call plug#end()
 
 "true colours for nvim in tmux
