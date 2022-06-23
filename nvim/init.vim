@@ -33,6 +33,8 @@ endif
 " Basic configuration
 let mapleader = " "
 nnoremap <SPACE> <Nop>
+set swapfile
+set dir=~/tmp
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 set nofoldenable      "do not auto create folds when file opens
@@ -125,6 +127,8 @@ let g:coc_global_extensions = [
 "gruvbox | statusline
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_sign_column = "bg0"
+let g:gruvbox_italic = 1
+let g:gruvbox_italicize_strings = 1
 colorscheme gruvbox
 hi! CocHintSign guifg=#f5e342
 
