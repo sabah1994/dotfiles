@@ -30,6 +30,12 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
+"HardMode. Doesn't fully disable movement keys but makes it annoying to use
+noremap jj <nop>
+noremap kk <nop>
+noremap hh <nop>
+noremap ll <nop>
+
 " Basic configuration
 let mapleader = " "
 nnoremap <SPACE> <Nop>
