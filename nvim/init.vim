@@ -30,11 +30,6 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-"HardMode. Doesn't fully disable movement keys but makes it annoying to use
-noremap jj <nop>
-noremap kk <nop>
-noremap hh <nop>
-noremap ll <nop>
 
 " Basic configuration
 let mapleader = " "
@@ -89,6 +84,7 @@ nnoremap <leader>- :split<CR>
 " Edit common files quickly
 nnoremap <Leader>ev :edit $MYVIMRC<cr>
 nnoremap <Leader>ez :edit ~/.zshrc<cr>
+nnoremap <Leader>so  :so $MYVIMRC<cr>
 
 " move code alt+arrows
 nnoremap <silent> <M-Up>    :<C-U>exec "exec 'norm m`' \| move -" . (1+v:count1)<CR>``
@@ -136,6 +132,8 @@ let g:gruvbox_sign_column = "bg0"
 let g:gruvbox_italic = 1
 let g:gruvbox_italicize_strings = 1
 colorscheme gruvbox
+" For even darker background
+"cd ~/.vim/plugged/gruvbox/colors/gruvbox.vim let s:gb.dark0_hard  = ['#121212', 233]     " 29-32-33
 hi! CocHintSign guifg=#f5e342
 
 "vim-airline | statusline
