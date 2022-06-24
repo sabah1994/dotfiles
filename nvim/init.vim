@@ -54,6 +54,7 @@ set clipboard=unnamedplus          "copy to system clipboard
 " better split window locations
 set splitright
 set splitbelow
+set laststatus=3                   "global statusline
 
 
 "MY KEY MAPPINGS
@@ -125,6 +126,8 @@ let g:coc_global_extensions = [
 \ 'coc-lists',
 \ 'coc-sh'
 \ ]
+" toggle dignostics
+nmap <leader>ta :call CocAction('diagnosticToggle')<CR>
 
 "gruvbox | statusline
 let g:gruvbox_contrast_dark = 'hard'
@@ -183,6 +186,8 @@ omap ih <Plug>(GitGutterTextObjectInnerPending)
 omap ah <Plug>(GitGutterTextObjectOuterPending)
 xmap ih <Plug>(GitGutterTextObjectInnerVisual)
 xmap ah <Plug>(GitGutterTextObjectOuterVisual)
+"toggle
+nmap tg :GitGutterToggle<CR>
 
 "quick-scope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
