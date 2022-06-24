@@ -21,6 +21,7 @@ Plug 'tpope/vim-surround'           "Easy text-object sorrounding plugin
 Plug 'nvim-treesitter/nvim-treesitter', {'do':':TSUpdate'}      "Syntax tree plugin
 Plug 'christoomey/vim-tmux-navigator'             "Easy navigation between tmux panes and vim windows
 Plug 'mhinz/vim-startify'           "Startup screen
+Plug 'puremourning/vimspector'      "Debugger
 call plug#end()
 
 "true colours for nvim in tmux
@@ -136,7 +137,7 @@ let g:gruvbox_italic = 1
 let g:gruvbox_italicize_strings = 1
 colorscheme gruvbox
 " For even darker background
-"cd ~/.vim/plugged/gruvbox/colors/gruvbox.vim let s:gb.dark0_hard  = ['#121212', 233]     " 29-32-33
+"cd ~/.vim/plugged/gruvbox/colors/gruvbox.vim let s:gb.dark0_hard  = ['#171717', 233]     " 29-32-33
 hi! CocHintSign guifg=#f5e342
 
 "vim-airline | statusline
@@ -206,8 +207,40 @@ map <leader>j <cmd>HopLineAC<CR>
 map <leader><leader>k <cmd>HopWordBC<CR>
 map <leader><leader>j <cmd>HopWordAC<CR>
 
-" vimade
+" vimade | fades inactive windows
 nmap <leader>tf :VimadeToggle<CR>
+
+" vimspector | debuggging <<==================================>>
+nnoremap <Leader>ds :call vimspector#Launch()<CR>
+nnoremap <Leader>de :call vimspector#Reset()<CR>
+nnoremap <Leader>dc :call vimspector#Continue()<CR>
+
+" breakpoints
+nnoremap <Leader>db :call vimspector#ToggleBreakpoint()<CR>
+nnoremap <Leader>dB :call vimspector#ClearBreakpoints()<CR>
+
+" Use arrow keys when debugging, makes it much simpler.
+" Easily toggle arrow keys
+" Use arrows keys to do debugging
+let s:vimSpectroDebugMode=0
+function ToggleKeysForDebug()
+    if s:vimSpectroDebugMode
+        unmap <Up>
+        unmap <Left>
+        unmap <Right>
+        unmap <Down>
+        echom "DebugMode is OFF"
+    else
+        nmap <Up> <Plug>VimspectorRestart
+        nmap <Left> <Plug>VimspectorStepOut
+        nmap <Right> <Plug>VimspectorStepInto
+        nmap <Down> <Plug>VimspectorStepOver
+        echom "DebugMode is ON"
+    endif
+    let s:vimSpectroDebugMode = !s:vimSpectroDebugMode
+endfunction
+nnoremap <leader>td :call ToggleKeysForDebug()<CR>
+" <<==========================================================>>
 
 source $HOME/.config/nvim/plug-config/tree-sitter.vim
 source $HOME/.config/nvim/plug-config/coc.vim
