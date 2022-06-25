@@ -43,10 +43,13 @@ export FZF_DEFAULT_OPTS='--height 70% --layout=reverse --border
   --color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f
   --color info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54
 '
+# fzf-tab style
+zstyle ":fzf-tab:*" fzf-flags --height=70% --layout=reverse --border \
+--color "fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f" \
+--color "info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54"
 
 # p10k theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Replace zsh tab completion with fzf
-# TODO align fzf and fzf-tab colours
+# Replaces zsh tab completion with fzf
 source ~/.fzf-tab/fzf-tab.plugin.zsh
