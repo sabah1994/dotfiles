@@ -245,11 +245,16 @@ nnoremap <leader>td :call ToggleKeysForDebug()<CR>
 " <<==========================================================>>
 
 " fzf | fuzzy search finder
-nnoremap <silent><nowait> <leader>f  :<C-u>Files<CR>
-nnoremap <silent><nowait> <leader>gf  :<C-u>GFiles<CR>
-nnoremap <silent><nowait> <leader>b  :<C-u>Buffers<CR>
-nnoremap <silent><nowait> <leader>gr  :<C-u>Rg<CR>
-nnoremap <silent><nowait> <leader>c  :<C-u>Commands<CR>
+nnoremap <silent><nowait> <leader>f  :<C-u>FzfFiles<CR>
+nnoremap <silent><nowait> <leader>gf  :<C-u>FzfGFiles<CR>
+nnoremap <silent><nowait> <leader>b  :<C-u>FzfBuffers<CR>
+nnoremap <silent><nowait> <leader>gr  :<C-u>FzfRg<CR>
+nnoremap <silent><nowait> <leader>c  :<C-u>FzfCommands<CR>
+"Use ag (silverSearcher) because it respects gitignore
+"Even in non-git folders it respects global gitignore
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+" Add prefix for fzf commands
+let g:fzf_command_prefix = 'Fzf'
 " Other useful commands
 " Commits   | For commits
 " BCommits  | Commits related to current buffer

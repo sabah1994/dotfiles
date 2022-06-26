@@ -30,6 +30,8 @@ install_packages(){
     echo "tmux"
     echo "git"
     echo "ripgrep"
+    echo "NPM: treesitter"
+    echo "silverSearcher"
     echo "==================================="
     $1 install neovim
     $1 install nodejs
@@ -38,6 +40,12 @@ install_packages(){
     $1 install ripgrep
     sudo npm -g install tree-sitter-cli
     sudo npm -g install tree-sitter
+    if [ "$machine" == "Mac" ]
+    then
+        brew install the_silver_searcher
+    elif [[ "$machine" == "Linux" ]]; then
+        apt-get install silversearcher-ag
+    fi
 }
 
 setup_tmux() {
