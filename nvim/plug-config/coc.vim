@@ -82,9 +82,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
-" Formatting selected code.
+" Formatting selected code. Followed by highlighted code
 xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -152,9 +151,3 @@ nnoremap <silent><nowait> <leader>a  :<C-u>CocList diagnostics<cr>
 " Find symbol of current document. There are also plugins which show outline
 " on right
 nnoremap <silent><nowait> <leader>o  :<C-u>CocList outline<cr>
-" Open buffers
-nnoremap <silent><nowait> <leader>b  :<C-u>CocList -A buffers<CR>
-"Open files
-nnoremap <silent><nowait> <leader>f  :<C-u>CocList files<CR>
-" Open grep
-nnoremap <silent><nowait> <leader>gr  :<C-u>CocList grep<CR>

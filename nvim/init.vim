@@ -22,6 +22,8 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do':':TSUpdate'}      "Syntax tree plu
 Plug 'christoomey/vim-tmux-navigator'             "Easy navigation between tmux panes and vim windows
 Plug 'mhinz/vim-startify'           "Startup screen
 Plug 'puremourning/vimspector'      "Debugger
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'             "Fuzzy finder
 call plug#end()
 
 "true colours for nvim in tmux
@@ -241,6 +243,16 @@ function ToggleKeysForDebug()
 endfunction
 nnoremap <leader>td :call ToggleKeysForDebug()<CR>
 " <<==========================================================>>
+
+" fzf | fuzzy search finder
+nnoremap <silent><nowait> <leader>f  :<C-u>Files<CR>
+nnoremap <silent><nowait> <leader>gf  :<C-u>GFiles<CR>
+nnoremap <silent><nowait> <leader>b  :<C-u>Buffers<CR>
+nnoremap <silent><nowait> <leader>gr  :<C-u>Rg<CR>
+nnoremap <silent><nowait> <leader>c  :<C-u>Commands<CR>
+" Other useful commands
+" Commits   | For commits
+" BCommits  | Commits related to current buffer
 
 source $HOME/.config/nvim/plug-config/tree-sitter.vim
 source $HOME/.config/nvim/plug-config/coc.vim
