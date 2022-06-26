@@ -252,7 +252,7 @@ nnoremap <silent><nowait> <leader>gr  :<C-u>FzfRg<CR>
 nnoremap <silent><nowait> <leader>c  :<C-u>FzfCommands<CR>
 "Use ag (silverSearcher) because it respects gitignore
 "Even in non-git folders it respects global gitignore
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 " Add prefix for fzf commands
 let g:fzf_command_prefix = 'Fzf'
 " Other useful commands
