@@ -12,6 +12,7 @@
             "html"
         ]
     },
+    "coc.preferences.snippetHighlight": true,
     "session.saveOnVimLeave": false,
     "signature.target": "echo",
     "coc.preferences.formatOnSaveFiletypes": [
