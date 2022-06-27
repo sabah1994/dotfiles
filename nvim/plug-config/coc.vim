@@ -29,11 +29,16 @@ else
   set signcolumn=yes
 endif
 
-inoremap <silent><expr> <C-J>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<C-J>" :
-      \ coc#refresh()
-inoremap <expr><C-K> pumvisible() ? "\<C-p>" : "\<C-h>"
+let g:coc_snippet_next = ''
+let g:coc_snippet_prev = ''
+inoremap <silent><expr> <c-j>
+   \ pumvisible() ? "\<c-n>" :
+   \ coc#jumpable() ? "\<c-r>=coc#rpc#request('snippetNext', [])<cr>" :
+   \ "\<c-j>"
+inoremap <silent><expr> <c-k>
+   \ pumvisible() ? "\<c-p>" :
+   \ coc#jumpable() ? "\<c-r>=coc#rpc#request('snippetPrev', [])<cr>" :
+   \ "\<c-k>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1

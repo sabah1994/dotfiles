@@ -9,9 +9,11 @@
     "diagnostic.virtualTextPrefix": "        ",
     "snippets.extends": {
         "javascript": [
-            "html"
+            "html",
+            "javascript-react"
         ]
     },
+    "coc.preferences.snippetHighlight": true,
     "session.saveOnVimLeave": false,
     "signature.target": "echo",
     "coc.preferences.formatOnSaveFiletypes": [
