@@ -24,6 +24,7 @@ Plug 'mhinz/vim-startify'           "Startup screen
 Plug 'puremourning/vimspector'      "Debugger
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'             "Fuzzy finder
+Plug 'stevearc/aerial.nvim'         "Code outline
 call plug#end()
 
 "true colours for nvim in tmux
@@ -258,6 +259,18 @@ let g:fzf_command_prefix = 'Fzf'
 " Other useful commands
 " Commits   | For commits
 " BCommits  | Commits related to current buffer
+
+" Aerial | code outline
+lua << EOF
+require('aerial').setup({
+  default_direction = "left",
+  nerd_font = true,
+  show_guides = true
+})
+EOF
+" toggle | also disables fade plugin
+nmap <leader>to :VimadeDisable <CR> :AerialToggle<CR>
+hi link AerialLine CursorLineNr
 
 source $HOME/.config/nvim/plug-config/tree-sitter.vim
 source $HOME/.config/nvim/plug-config/coc.vim
