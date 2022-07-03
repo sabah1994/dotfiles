@@ -59,6 +59,8 @@ set clipboard=unnamedplus          "copy to system clipboard
 set splitright
 set splitbelow
 set laststatus=3                   "global statusline
+set cursorline
+set cursorlineopt=line             "do not highlight line number
 
 
 "MY KEY MAPPINGS
@@ -133,7 +135,7 @@ let g:coc_global_extensions = [
 " toggle dignostics
 nmap <leader>ta :call CocAction('diagnosticToggle')<CR>
 
-"gruvbox | statusline
+"gruvbox | theme
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_sign_column = "bg0"
 let g:gruvbox_italic = 1
@@ -141,6 +143,7 @@ let g:gruvbox_italicize_strings = 1
 colorscheme gruvbox
 " For even darker background
 "cd ~/.vim/plugged/gruvbox/colors/gruvbox.vim let s:gb.dark0_hard  = ['#171717', 233]     " 29-32-33
+"Line 591 change to: hi! link Operator GruvboxFg1 (https://github.com/morhetz/gruvbox/issues/260)
 hi! CocHintSign guifg=#f5e342
 
 "vim-airline | statusline
