@@ -207,8 +207,8 @@ lua << EOF
 require'hop'.setup()
 EOF
 "Not mapping s in operator mode because it's taken by surround
-nmap s <cmd>HopChar2<CR>
-vmap s <cmd>HopChar2<CR>
+nmap s <cmd>HopChar1<CR>
+vmap s <cmd>HopChar1<CR>
 map <leader>k <cmd>HopLineBC<CR>
 map <leader>j <cmd>HopLineAC<CR>
 map <leader><leader>k <cmd>HopWordBC<CR>
