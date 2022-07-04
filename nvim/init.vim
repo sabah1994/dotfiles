@@ -10,16 +10,16 @@ Plug 'bling/vim-bufferline'         "Buffers in statusline
 Plug 'tpope/vim-fugitive'           "Needed for git branch in vim-airline
 Plug 'neoclide/coc.nvim', {'branch': 'release'}     "Conquer of Completion
 Plug 'honza/vim-snippets'           "Snippets
-Plug 'PeterRincker/vim-searchlight' "Undercursor higlighted text in different colour
+Plug 'PeterRincker/vim-searchlight' "Under cursor highlighted text in different colour
 Plug 'TaDaa/vimade'                 "Show inactive windows in different colours
 Plug 'lukas-reineke/indent-blankline.nvim'          "Indent guide
 Plug 'airblade/vim-gitgutter'       "Show git changes on left
 Plug 'psliwka/vim-smoothie'         "Smooth scroll
 Plug 'unblevable/quick-scope'       "Highlights chars in current line to move easily
 Plug 'phaazon/hop.nvim'             "Easy hop around
-Plug 'tpope/vim-surround'           "Easy text-object sorrounding plugin
+Plug 'tpope/vim-surround'           "Easy text-object surrounding plugin
 Plug 'nvim-treesitter/nvim-treesitter', {'do':':TSUpdate'}      "Syntax tree plugin
-Plug 'nvim-treesitter/nvim-treesitter-textobjects'              "Text objets based on treesitter
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'              "Text objects based on treesitter
 Plug 'christoomey/vim-tmux-navigator'             "Easy navigation between tmux panes and vim windows
 Plug 'mhinz/vim-startify'           "Startup screen
 Plug 'puremourning/vimspector'      "Debugger
@@ -133,7 +133,7 @@ let g:coc_global_extensions = [
 \ 'coc-lists',
 \ 'coc-sh'
 \ ]
-" toggle dignostics
+" toggle diagnostics
 nmap <leader>ta :call CocAction('diagnosticToggle')<CR>
 
 "gruvbox | theme
@@ -218,17 +218,8 @@ map <leader><leader>j <cmd>HopWordAC<CR>
 nmap <leader>tf :VimadeToggle<CR>
 
 " vimspector | debuggging <<==================================>>
-nnoremap <Leader>ds :call vimspector#Launch()<CR>
-nnoremap <Leader>de :call vimspector#Reset()<CR>
-nnoremap <Leader>dc :call vimspector#Continue()<CR>
-
-" breakpoints
-nnoremap <Leader>db :call vimspector#ToggleBreakpoint()<CR>
-nnoremap <Leader>dB :call vimspector#ClearBreakpoints()<CR>
-
 " Use arrow keys when debugging, makes it much simpler.
-" Easily toggle arrow keys
-" Use arrows keys to do debugging
+" Because debug mode is rare, only map keys when it's turned on
 let s:vimSpectroDebugMode=0
 function ToggleKeysForDebug()
     if s:vimSpectroDebugMode
@@ -238,6 +229,13 @@ function ToggleKeysForDebug()
         unmap <Down>
         echom "DebugMode is OFF"
     else
+        nnoremap <Leader>ds :call vimspector#Launch()<CR>
+        nnoremap <Leader>de :call vimspector#Reset()<CR>
+        nnoremap <Leader>dc :call vimspector#Continue()<CR>
+        " breakpoints
+        nnoremap <Leader>db :call vimspector#ToggleBreakpoint()<CR>
+        nnoremap <Leader>dB :call vimspector#ClearBreakpoints()<CR>
+        "Arrow keys
         nmap <Up> <Plug>VimspectorRestart
         nmap <Left> <Plug>VimspectorStepOut
         nmap <Right> <Plug>VimspectorStepInto
