@@ -1,31 +1,31 @@
 " PLUGINS
 call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'              "Theme
-Plug 'preservim/nerdtree'           "File directory
-Plug 'ryanoasis/vim-devicons'       "File icons
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'      "Correct colour for icons
-Plug 'tpope/vim-commentary'         "Comment easily
-Plug 'vim-airline/vim-airline'      "Status line
-Plug 'bling/vim-bufferline'         "Buffers in statusline
-Plug 'tpope/vim-fugitive'           "Needed for git branch in vim-airline
-Plug 'neoclide/coc.nvim', {'branch': 'release'}     "Conquer of Completion
-Plug 'honza/vim-snippets'           "Snippets
-Plug 'PeterRincker/vim-searchlight' "Under cursor highlighted text in different colour
-Plug 'TaDaa/vimade'                 "Show inactive windows in different colours
-Plug 'lukas-reineke/indent-blankline.nvim'          "Indent guide
-Plug 'airblade/vim-gitgutter'       "Show git changes on left
-Plug 'psliwka/vim-smoothie'         "Smooth scroll
-Plug 'unblevable/quick-scope'       "Highlights chars in current line to move easily
-Plug 'phaazon/hop.nvim'             "Easy hop around
-Plug 'tpope/vim-surround'           "Easy text-object surrounding plugin
-Plug 'nvim-treesitter/nvim-treesitter', {'do':':TSUpdate'}      "Syntax tree plugin
-Plug 'nvim-treesitter/nvim-treesitter-textobjects'              "Text objects based on treesitter
-Plug 'christoomey/vim-tmux-navigator'             "Easy navigation between tmux panes and vim windows
-Plug 'mhinz/vim-startify'           "Startup screen
-Plug 'puremourning/vimspector'      "Debugger
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'             "Fuzzy finder
-Plug 'stevearc/aerial.nvim'         "Code outline
+Plug 'morhetz/gruvbox'                                      "Theme
+Plug 'preservim/nerdtree'                                   "File explorer
+Plug 'ryanoasis/vim-devicons'                               "File icons
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'              "Correct colour for icons
+Plug 'tpope/vim-commentary'                                 "Comment easily
+Plug 'vim-airline/vim-airline'                              "Status line
+Plug 'bling/vim-bufferline'                                 "Buffers in statusline
+Plug 'tpope/vim-fugitive'                                   "Git integration
+Plug 'neoclide/coc.nvim', {'branch': 'release'}             "Conquer of Completion
+Plug 'honza/vim-snippets'                                   "Snippets
+Plug 'PeterRincker/vim-searchlight'                         "Under cursor highlighted text in different colour
+Plug 'TaDaa/vimade'                                         "Show inactive windows in different colours
+Plug 'lukas-reineke/indent-blankline.nvim'                  "Indent guide
+Plug 'airblade/vim-gitgutter'                               "Show git changes on left
+Plug 'psliwka/vim-smoothie'                                 "Smooth scroll
+Plug 'unblevable/quick-scope'                               "Highlights chars in current line to move easily
+Plug 'phaazon/hop.nvim'                                     "Easy hop around
+Plug 'tpope/vim-surround'                                   "Easy text-object surrounding plugin
+Plug 'nvim-treesitter/nvim-treesitter', {'do':':TSUpdate'}  "Syntax tree plugin
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'          "Text objects based on treesitter
+Plug 'christoomey/vim-tmux-navigator'                       "Easy navigation between tmux panes and vim windows
+Plug 'mhinz/vim-startify'                                   "Startup screen
+Plug 'puremourning/vimspector'                              "Debugger
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }         "Installs FZF
+Plug 'junegunn/fzf.vim'                                     "Fuzzy finder
+Plug 'stevearc/aerial.nvim'                                 "Code outline
 call plug#end()
 
 "true colours for nvim in tmux
@@ -37,31 +37,31 @@ endif
 
 
 " Basic configuration
-let mapleader = " "
+let mapleader = " "                                         "map leader to space
 nnoremap <SPACE> <Nop>
-set swapfile
-set dir=~/tmp
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
-set nofoldenable      "do not auto create folds when file opens
-set foldnestmax=3     "max nested fold level
-set foldlevel=2       "fold level: zr or zm
-set encoding=utf-8
-set number relativenumber
-syntax on
-set scrolloff=7       "allow n lines at the bottom
-set ignorecase        "ignore case in search
+set swapfile                                                "swap files
+set dir=~/tmp                                               "swap file directory
+set foldmethod=expr                                         "treesitter for folds
+set foldexpr=nvim_treesitter#foldexpr()                     "treesitter for folds
+set nofoldenable                                            "do not auto create folds when file opens
+set foldnestmax=3                                           "max nested fold level
+set foldlevel=2                                             "fold level: zr or zm
+set encoding=utf-8                                          "default encoding
+set number relativenumber                                   "line numbers in signcolumn
+syntax on                                                   "critical for better syntax highlighting
+set scrolloff=7                                             "allow n lines at the bottom and top
+set ignorecase                                              "ignore case in search
 "4 spaces with tab
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set clipboard=unnamedplus          "copy to system clipboard
+set clipboard=unnamedplus                                   "copy to system clipboard
 " better split window locations
-set splitright
-set splitbelow
-set laststatus=3                   "global statusline
-set cursorline
-set cursorlineopt=line             "do not highlight line number
+set splitright                                              "default vertical split to right
+set splitbelow                                              "default horizental split to below
+set laststatus=3                                            "global statusline
+set cursorline                                              "highlight cursor line
+set cursorlineopt=line                                      "do not highlight sign column
 
 
 "MY KEY MAPPINGS
@@ -107,6 +107,7 @@ nnoremap n nzz
 nnoremap N Nzz
 nnoremap <C-o> <C-o>zz
 nnoremap <C-i> <C-i>zz
+
 "get rid of trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 "copy whole buffer
@@ -162,10 +163,10 @@ let g:bufferline_echo = 0  "do not echo to command line
 
 "nerdtree
 map <silent> <C-n> :NERDTreeToggle<CR>
-let NERDTreeQuitOnOpen=1  " close NERDTree when file open
-let NERDTreeWinSize = 50  "NT win size
-let NERDTreeShowHidden=1  "show hidden files
-let NERDTreeIgnore=['\.git$', 'venv$', '__pycache__$']   "ignore git folder
+let NERDTreeQuitOnOpen=1                                                "close NERDTree when file open
+let NERDTreeWinSize = 50                                                "NT win size
+let NERDTreeShowHidden=1                                                "show hidden files
+let NERDTreeIgnore=['\.git$', 'venv$', '__pycache__$']                  "ignore git folder
 
 "vim-fugitive
 noremap <leader>gv :Gvdiffsplit<CR>
