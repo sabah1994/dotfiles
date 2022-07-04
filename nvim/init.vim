@@ -19,6 +19,7 @@ Plug 'unblevable/quick-scope'       "Highlights chars in current line to move ea
 Plug 'phaazon/hop.nvim'             "Easy hop around
 Plug 'tpope/vim-surround'           "Easy text-object sorrounding plugin
 Plug 'nvim-treesitter/nvim-treesitter', {'do':':TSUpdate'}      "Syntax tree plugin
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'              "Text objets based on treesitter
 Plug 'christoomey/vim-tmux-navigator'             "Easy navigation between tmux panes and vim windows
 Plug 'mhinz/vim-startify'           "Startup screen
 Plug 'puremourning/vimspector'      "Debugger
