@@ -52,8 +52,8 @@ syntax on                                                   "critical for better
 set scrolloff=7                                             "allow n lines at the bottom and top
 set ignorecase                                              "ignore case in search
 "4 spaces with tab
-set tabstop=4
-set shiftwidth=4
+set tabstop=4                                               "number of spaces that a <Tab> in the file counts for
+set shiftwidth=4                                            "this determines indent guide and formating (invalid ["python"])
 set expandtab
 set clipboard=unnamedplus                                   "copy to system clipboard
 " better split window locations
