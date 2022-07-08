@@ -6,7 +6,7 @@ Plug 'kyazdani42/nvim-web-devicons'                         "Icons
 Plug 'ryanoasis/vim-devicons'                               "File icons
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'              "Correct colour for icons
 Plug 'tpope/vim-commentary'                                 "Comment easily
-Plug 'vim-airline/vim-airline'                              "Status line
+Plug 'nvim-lualine/lualine.nvim'                            "Status line
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }           "Bufferline
 Plug 'tpope/vim-fugitive'                                   "Git integration
 Plug 'neoclide/coc.nvim', {'branch': 'release'}             "Conquer of Completion
@@ -149,13 +149,6 @@ colorscheme gruvbox
 "Line 591 change to: hi! link Operator GruvboxFg1 (https://github.com/morhetz/gruvbox/issues/260)
 hi! CocHintSign guifg=#f5e342
 
-"vim-airline | statusline
-let g:airline_theme='gruvbox'
-let g:airline#extensions#branch#enabled=1
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#coc#error_symbol=" "
-let g:airline#extensions#coc#warning_symbol=" "
-
 "nerdtree
 map <silent> <C-n> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1                                                "close NERDTree when file open
@@ -281,6 +274,31 @@ require("bufferline").setup{
         -- diagnostics = "coc"
     }
 }
+EOF
+
+" lualine.nvim | statusline
+lua << EOF
+require('lualine').setup({
+    sections = {
+        lualine_a = {"mode"},
+        lualine_b = {"branch", {"diff", symbols = {added = " ", modified = "柳", removed = "柳"}}},
+        lualine_c = {
+            {"filetype", padding={right=0, left=2}, icon_only = true, component_separators = {left = "", right = ""}},
+            {"filename", padding={left=1}, color = {gui = "bold,italic", fg = "#ebdbb2"}}
+        },
+        lualine_x = {"encoding", "fileformat"},
+        lualine_y = {
+            {
+                "diagnostics",
+                sources = {"coc"},
+                sections = {"info", "warn", "error"},
+                symbols = {error = " "},
+                always_visible = true -- Show diagnostics even if there are none.
+            }
+        },
+        lualine_z = {"progress", "location"}
+    }
+})
 EOF
 
 
