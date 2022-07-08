@@ -2,11 +2,12 @@
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'                                      "Theme
 Plug 'preservim/nerdtree'                                   "File explorer
+Plug 'kyazdani42/nvim-web-devicons'                         "Icons
 Plug 'ryanoasis/vim-devicons'                               "File icons
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'              "Correct colour for icons
 Plug 'tpope/vim-commentary'                                 "Comment easily
 Plug 'vim-airline/vim-airline'                              "Status line
-Plug 'bling/vim-bufferline'                                 "Buffers in statusline
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }           "Bufferline
 Plug 'tpope/vim-fugitive'                                   "Git integration
 Plug 'neoclide/coc.nvim', {'branch': 'release'}             "Conquer of Completion
 Plug 'honza/vim-snippets'                                   "Snippets
@@ -155,12 +156,6 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#coc#error_symbol=" "
 let g:airline#extensions#coc#warning_symbol=" "
 
-" vim-bufferline
-let g:bufferline_echo = 0  "do not echo to command line
-"To keep active buffer at the first position
-" let g:bufferline_rotate = 1
-" let g:bufferline_fixed_index =  0 "always first
-
 "nerdtree
 map <silent> <C-n> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1                                                "close NERDTree when file open
@@ -274,6 +269,20 @@ EOF
 " toggle | also disables fade plugin
 nmap <leader>to :VimadeDisable <CR> :AerialToggle<CR>
 hi link AerialLine CursorLineNr
+
+"bufferline.nvim
+lua << EOF
+require("bufferline").setup{
+    options = {
+        show_buffer_close_icons = false,
+        show_close_icon = false,
+        separator_style = "thick"
+        -- numbers = "buffer_id"
+        -- diagnostics = "coc"
+    }
+}
+EOF
+
 
 source $HOME/.config/nvim/plug-config/tree-sitter.vim
 source $HOME/.config/nvim/plug-config/coc.vim
