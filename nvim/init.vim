@@ -1,10 +1,8 @@
 " PLUGINS
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'                                      "Theme
-Plug 'preservim/nerdtree'                                   "File explorer
-Plug 'kyazdani42/nvim-web-devicons'                         "Icons
-Plug 'ryanoasis/vim-devicons'                               "File icons
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'              "Correct colour for icons
+Plug 'kyazdani42/nvim-web-devicons'                         "File Icons
+Plug 'kyazdani42/nvim-tree.lua'                             "File explorer
 Plug 'tpope/vim-commentary'                                 "Comment easily
 Plug 'nvim-lualine/lualine.nvim'                            "Status line
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }           "Bufferline
@@ -31,9 +29,9 @@ call plug#end()
 
 "true colours for nvim in tmux
 if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
 endif
 
 
@@ -149,12 +147,59 @@ colorscheme gruvbox
 "Line 591 change to: hi! link Operator GruvboxFg1 (https://github.com/morhetz/gruvbox/issues/260)
 hi! CocHintSign guifg=#f5e342
 
-"nerdtree
-map <silent> <C-n> :NERDTreeToggle<CR>
-let NERDTreeQuitOnOpen=1                                                "close NERDTree when file open
-let NERDTreeWinSize = 50                                                "NT win size
-let NERDTreeShowHidden=1                                                "show hidden files
-let NERDTreeIgnore=['\.git$', 'venv$', '__pycache__$']                  "ignore git folder
+"nvim-tree
+map <silent> <C-n> :NvimTreeToggle<CR>
+lua << EOF
+require("nvim-tree").setup({
+    sort_by = "case_sensitive",
+    git = {
+        show_on_dirs = false,
+    },
+    view = {
+        adaptive_size = true,
+        mappings = {
+            list = {
+                { key = "u", action = "dir_up" },
+            },
+        },
+    },
+    renderer = {
+        indent_markers = {
+            enable = true,
+        },
+        group_empty = true,     -- empty folders on the same line
+        icons = {
+            git_placement = "signcolumn",
+            glyphs = {
+                git = {
+                    unstaged = "",
+                    staged = "",
+                    untracked = "留",
+                }
+            }
+        }
+    },
+    diagnostics = {
+        enable = true,
+        show_on_dirs = false,
+        icons = {
+          error = "",
+        },
+      },
+    filters = {
+        -- dotfiles = true, --don't show hidden files
+        custom = {"venv", "__pycache__", ".git"} -- ignore folders
+        },
+    actions = {
+    open_file = {
+            quit_on_open = true,
+        }
+    },
+})
+EOF
+" Colours for git signs
+highlight NvimTreeGitDirty guifg=#26A269
+highlight NvimTreeGitStaged guifg=#26A269
 
 "vim-fugitive
 noremap <leader>gv :Gvdiffsplit<CR>
