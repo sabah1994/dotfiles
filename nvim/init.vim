@@ -17,6 +17,7 @@ Plug 'psliwka/vim-smoothie'                                 "Smooth scroll
 Plug 'unblevable/quick-scope'                               "Highlights chars in current line to move easily
 Plug 'phaazon/hop.nvim'                                     "Easy hop around
 Plug 'tpope/vim-surround'                                   "Easy text-object surrounding plugin
+Plug 'tpope/vim-repeat'                                     "Repeat macros and plug mappings with dot
 Plug 'nvim-treesitter/nvim-treesitter', {'do':':TSUpdate'}  "Syntax tree plugin
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'          "Text objects based on treesitter
 Plug 'christoomey/vim-tmux-navigator'                       "Easy navigation between tmux panes and vim windows
@@ -242,8 +243,8 @@ require("bufferline").setup{
     options = {
         show_buffer_close_icons = false,
         show_close_icon = false,
-        separator_style = "thick"
-        -- numbers = "buffer_id"
+        separator_style = "thick",
+        numbers = "ordinal" -- or "buffer_id"
         -- diagnostics = "coc"
     }
 }
@@ -278,3 +279,5 @@ EOF
 source $HOME/.config/nvim/plug-config/tree-sitter.vim
 source $HOME/.config/nvim/plug-config/coc.vim
 
+" vim-repeat
+silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
