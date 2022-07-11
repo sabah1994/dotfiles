@@ -37,60 +37,10 @@ endif
 
 " Basic configuration
 lua require('options')
-
-
-"MY KEY MAPPINGS
-let mapleader = " "                                         "map leader to space
-nnoremap <SPACE> <Nop>
-"do not copy delete command
-nnoremap d "_d
-vnoremap d "_d
-"in V Line mode, don't delete line break if text in register doesn't have line
-"break. DON'T stupidly join pasted text to below line
-vnoremap <expr> p mode() ==# "V" && match(getreg(), "\n$") == -1 ? "\"_dd<esc>O<esc>p" : "\"_dP"
-"paste text on new line, if there is already linebreak do not insert a new one
-nnoremap <expr> <leader>p  match(getreg(), "\n$") == -1 ? "o<esc>p" : "p"
-nnoremap <expr> <leader>P  match(getreg(), "\n$") == -1 ? "O<esc>p" : "P"
-"move at the start and end of line easily
-noremap H ^
-noremap L $
-
-" Buffers shortcuts
-nnoremap <leader>l :bnext<CR>
-nnoremap <leader>h :bprevious<CR>
-nnoremap <leader>d :bdelete<CR>
-nnoremap <leader>w :write<CR>
-nnoremap <leader>q :quit<CR>
-
-" Easier split window
-nnoremap <leader>\| :vsplit<CR>
-nnoremap <leader>- :split<CR>
-
-" Edit common files quickly
-nnoremap <Leader>ev :edit $MYVIMRC<cr>
-nnoremap <Leader>ez :edit ~/.zshrc<cr>
-nnoremap <Leader>so  :so $MYVIMRC<cr>
-
-" move code alt+arrows
-nnoremap <silent> <M-Up>    :<C-U>exec "exec 'norm m`' \| move -" . (1+v:count1)<CR>``
-nnoremap <silent> <M-Down>  :<C-U>exec "exec 'norm m`' \| move +" . (0+v:count1)<CR>``
-inoremap <silent> <M-Up>    <C-O>m`<C-O>:move -2<CR><C-O>``
-inoremap <silent> <M-Down>  <C-O>m`<C-O>:move +1<CR><C-O>``
-vnoremap <silent> <M-Up>    :<C-U>exec "'<,'>move '<-" . (1+v:count1)<CR>gv
-vnoremap <silent> <M-Down>  :<C-U>exec "'<,'>move '>+" . (0+v:count1)<CR>gv
-
-"keep jumps and search in middle
-nnoremap n nzz
-nnoremap N Nzz
-nnoremap <C-o> <C-o>zz
-nnoremap <C-i> <C-i>zz
+lua require('keyMappings')
 
 "get rid of trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
-"copy whole buffer
-nnoremap <F5> :%y+<CR>
-"Escape: also clears highlighting
-nnoremap <silent> <esc> <Cmd>noh<return><esc>
 
 " Text objects
 " inner line
