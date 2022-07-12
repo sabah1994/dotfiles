@@ -44,28 +44,12 @@ lua require('autocmds')
 " vim-commentary
 autocmd FileType json setlocal commentstring=//\ %s
 
-" Text objects
-" inner line
-xnoremap il ^og_
 
 "PLUGINS configuration
 let g:python3_host_prog="~/vim_venv/bin/python"
 
 "coc.vim
-let g:coc_global_extensions = [
-\ 'coc-json',
-\ 'coc-pyright',
-\ 'coc-java',
-\ 'coc-snippets',
-\ 'coc-tsserver',
-\ 'coc-vimlsp',
-\ 'coc-pairs',
-\ 'coc-lists',
-\ 'coc-sh',
-\ 'coc-sumneko-lua'
-\ ]
-" toggle diagnostics
-nmap <leader>ta :call CocAction('diagnosticToggle')<CR>
+lua require("plug-config/coc")
 
 "gruvbox | theme
 lua require("plug-config/gruvbox")
@@ -271,7 +255,6 @@ EOF
 
 
 source $HOME/.config/nvim/plug-config/tree-sitter.vim
-source $HOME/.config/nvim/plug-config/coc.vim
 
 " vim-repeat
 silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
