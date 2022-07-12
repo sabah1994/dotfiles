@@ -42,6 +42,8 @@ lua require('keyMappings')
 
 "get rid of trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
+" vim-commentary
+autocmd FileType json setlocal commentstring=//\ %s
 
 " Text objects
 " inner line
@@ -60,7 +62,8 @@ let g:coc_global_extensions = [
 \ 'coc-vimlsp',
 \ 'coc-pairs',
 \ 'coc-lists',
-\ 'coc-sh'
+\ 'coc-sh',
+\ 'coc-sumneko-lua'
 \ ]
 " toggle diagnostics
 nmap <leader>ta :call CocAction('diagnosticToggle')<CR>

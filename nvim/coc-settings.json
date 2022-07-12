@@ -27,10 +27,16 @@
         "java",
         "javascriptreact"
     ],
+    // python
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,
     "python.formatting.provider": "black",
     "python.formatting.blackPath": "~/vim_venv/bin/black",
+    // Lua
+    "sumneko-lua.enableNvimLuaDev": true,
+    "Lua.telemetry.enable": false,
+    "Lua.window.statusBar": false,
+    "Lua.hint.enable": false,
     "list.source.files.excludePatterns": [
         "**/venv/**",
         "**/node_modules/**",
