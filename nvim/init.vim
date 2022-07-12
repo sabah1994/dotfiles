@@ -39,9 +39,8 @@ endif
 " Basic configuration
 lua require('options')
 lua require('keyMappings')
+lua require('autocmds')
 
-"get rid of trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//e
 " vim-commentary
 autocmd FileType json setlocal commentstring=//\ %s
 
