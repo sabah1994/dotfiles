@@ -53,8 +53,11 @@ lua require("plug-config/coc")
 "gruvbox | theme
 lua require("plug-config/gruvbox")
 
-"nvim-tree
+"nvim-tree | file explorer
 lua require("plug-config/nvimTree")
+
+" lualine.nvim | statusline
+lua require("plug-config/lualine")
 
 "vim-fugitive
 noremap <leader>gv :Gvdiffsplit<CR>
@@ -174,31 +177,6 @@ require("bufferline").setup{
         -- diagnostics = "coc"
     }
 }
-EOF
-
-" lualine.nvim | statusline
-lua << EOF
-require('lualine').setup({
-    sections = {
-        lualine_a = {"mode"},
-        lualine_b = {"branch", {"diff", symbols = {added = " ", modified = "柳", removed = "柳"}}},
-        lualine_c = {
-            {"filetype", padding={right=0, left=2}, icon_only = true, component_separators = {left = "", right = ""}},
-            {"filename", padding={left=1}, color = {gui = "bold,italic", fg = "#ebdbb2"}}
-        },
-        lualine_x = {"encoding", "fileformat"},
-        lualine_y = {
-            {
-                "diagnostics",
-                sources = {"coc"},
-                sections = {"info", "warn", "error"},
-                symbols = {error = " "},
-                always_visible = true -- Show diagnostics even if there are none.
-            }
-        },
-        lualine_z = {"progress", "location"}
-    }
-})
 EOF
 
 

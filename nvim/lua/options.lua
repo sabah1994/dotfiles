@@ -9,6 +9,8 @@ set.laststatus = 3                                      --global statusline
 set.cmdheight = 2                                       --screen lines for command-line
 set.updatetime = 300                                    --quciker update  time for better experience
 set.shortmess = vim.o.shortmess ..  "c"
+vim.g["python3_host_prog"] = "~/vim_venv/bin/python"    --python virtualenv path
+
 
 -- signcolumn
 set.number = true                                       --show cursorline number
