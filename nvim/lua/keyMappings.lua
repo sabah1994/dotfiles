@@ -1,6 +1,6 @@
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
-local expr_opts = {noremap = true, silent = true, expr = true}
+local expr_opts = { noremap = true, silent = true, expr = true }
 
 -- set space as leader
 keymap("", "<Space>", "<Nop>", opts)
@@ -8,13 +8,14 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- do not copy delete command
-keymap("n","d", "\"_d", opts)
-keymap("v","d", "\"_d", opts)
+keymap("n", "d", "\"_d", opts)
+keymap("v", "d", "\"_d", opts)
 
 -- in visual line mode do not join pasted text to next line
 keymap("v", "p", [[mode() ==# "V" && match(getreg(), "\n$") == -1 ? "\"_dd<esc>O<esc>p" : "\"_dP"]], expr_opts)
 -- paste text on new line, if there is already linebreak do not insert a new one
 keymap("n", "<leader>p", [[match(getreg(), "\n$") == -1 ? "o<esc>p" : "p"]], expr_opts)
+-- TODO doesn't work as expected
 keymap("n", "<leader>P", [[match(getreg(), "\n$") == -1 ? "O<esc>p" : "p"]], expr_opts)
 
 -- move at the start and end of line easily
@@ -22,8 +23,8 @@ keymap("", "H", "^", {})
 keymap("", "L", "$", {})
 
 -- buffers shortcuts
-keymap("n","<leader>l", ":bnext<CR>", opts)
-keymap("n","<leader>h",  ":bprevious<CR>", opts)
+keymap("n", "<leader>l", ":bnext<CR>", opts)
+keymap("n", "<leader>h", ":bprevious<CR>", opts)
 keymap("n", "<leader>d", ":bdelete<CR>", opts)
 keymap("n", "<leader>w", ":write<CR>", opts)
 keymap("n", "<leader>q", ":quit<CR>", opts)
