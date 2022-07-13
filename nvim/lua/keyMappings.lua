@@ -16,7 +16,7 @@ keymap("v", "p", [[mode() ==# "V" && match(getreg(), "\n$") == -1 ? "\"_dd<esc>O
 -- paste text on new line, if there is already linebreak do not insert a new one
 keymap("n", "<leader>p", [[match(getreg(), "\n$") == -1 ? "o<esc>p" : "p"]], expr_opts)
 -- TODO doesn't work as expected
-keymap("n", "<leader>P", [[match(getreg(), "\n$") == -1 ? "O<esc>p" : "p"]], expr_opts)
+keymap("n", "<leader>P", [[match(getreg(), "\n$") == -1 ? "O<esc>p" : "P"]], expr_opts)
 
 -- move at the start and end of line easily
 keymap("", "H", "^", {})

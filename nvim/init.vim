@@ -46,7 +46,6 @@ autocmd FileType json setlocal commentstring=//\ %s
 
 
 "PLUGINS configuration
-let g:python3_host_prog="~/vim_venv/bin/python"
 
 "coc.vim
 lua require("plug-config/coc")
@@ -55,58 +54,7 @@ lua require("plug-config/coc")
 lua require("plug-config/gruvbox")
 
 "nvim-tree
-map <silent> <C-n> :NvimTreeToggle<CR>
-lua << EOF
-require("nvim-tree").setup({
-    sort_by = "case_sensitive",
-    git = {
-        show_on_dirs = false,
-    },
-    view = {
-        adaptive_size = true,
-        mappings = {
-            list = {
-                { key = "u", action = "dir_up" },
-            },
-        },
-    },
-    renderer = {
-        indent_markers = {
-            enable = true,
-        },
-        group_empty = true,     -- empty folders on the same line
-        icons = {
-            git_placement = "signcolumn",
-            glyphs = {
-                git = {
-                    unstaged = "",
-                    staged = "",
-                    untracked = "留",
-                }
-            }
-        }
-    },
-    diagnostics = {
-        enable = true,
-        show_on_dirs = false,
-        icons = {
-          error = "",
-        },
-      },
-    filters = {
-        -- dotfiles = true, --don't show hidden files
-        custom = {"venv", "__pycache__", ".git"} -- ignore folders
-        },
-    actions = {
-    open_file = {
-            quit_on_open = true,
-        }
-    },
-})
-EOF
-" Colours for git signs
-highlight NvimTreeGitDirty guifg=#26A269
-highlight NvimTreeGitStaged guifg=#26A269
+lua require("plug-config/nvimTree")
 
 "vim-fugitive
 noremap <leader>gv :Gvdiffsplit<CR>
