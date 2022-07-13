@@ -1,5 +1,4 @@
-lua << EOF
-require'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter.configs'.setup {
     -- TS parsers
     ensure_installed = { "c",
         "python",
@@ -18,7 +17,7 @@ require'nvim-treesitter.configs'.setup {
     -- TS modules
     highlight = {
         enable = true,
-        disable = {"rust" },
+        disable = { "rust" },
     },
 
     -- nvim-treesitter/nvim-treesitter-textobjects
@@ -30,17 +29,16 @@ require'nvim-treesitter.configs'.setup {
             lookahead = true,
 
             keymaps = {
-              -- You can use the capture groups defined in textobjects.scm
-              ["af"] = "@function.outer",
-              ["if"] = "@function.inner",
-              ["ac"] = "@class.outer",
-              ["ic"] = "@class.inner",
-              ["ab"] = "@conditional.outer",
-              ["ib"] = "@conditional.inner",
-              ["al"] = "@loop.outer",
-              ["il"] = "@loop.inner",
+                -- You can use the capture groups defined in textobjects.scm
+                ["af"] = "@function.outer",
+                ["if"] = "@function.inner",
+                ["ac"] = "@class.outer",
+                ["ic"] = "@class.inner",
+                ["ab"] = "@conditional.outer",
+                ["ib"] = "@conditional.inner",
+                ["al"] = "@loop.outer",
+                ["il"] = "@loop.inner",
             },
         },
     },
 }
-EOF

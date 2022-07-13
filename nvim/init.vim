@@ -59,6 +59,9 @@ lua require("plug-config/nvimTree")
 " lualine.nvim | statusline
 lua require("plug-config/lualine")
 
+"tree-sitter
+lua require("plug-config/treeSitter")
+
 "vim-fugitive
 noremap <leader>gv :Gvdiffsplit<CR>
 " git checkout --filename at buffer level (use undo to revert checkout)
@@ -180,7 +183,6 @@ require("bufferline").setup{
 EOF
 
 
-source $HOME/.config/nvim/plug-config/tree-sitter.vim
 
 " vim-repeat
 silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
