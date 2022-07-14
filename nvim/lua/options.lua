@@ -10,7 +10,9 @@ set.cmdheight = 2                                       --screen lines for comma
 set.updatetime = 300                                    --quciker update  time for better experience
 set.shortmess = vim.o.shortmess ..  "c"
 vim.g["python3_host_prog"] = "~/vim_venv/bin/python"    --python virtualenv path
-
+if vim.fn.exists("+termguicolors") then
+    vim.opt.termguicolors = true                        -- true colours for nvim in tmux
+end
 
 -- signcolumn
 set.number = true                                       --show cursorline number
