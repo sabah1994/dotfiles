@@ -63,34 +63,10 @@ lua require("plug-config/lualine")
 lua require("plug-config/treeSitter")
 
 "vim-fugitive
-noremap <leader>gv :Gvdiffsplit<CR>
-" git checkout --filename at buffer level (use undo to revert checkout)
-noremap <leader>gc :Gread<CR>
-"Git add --filename
-noremap <leader>ga :Gwrite<CR>
-noremap <leader>gd :G diff<CR>
-noremap <leader>gds :G diff --staged<CR>
-" Notes: useful commands
-" Git blame       - Open git blame on left, press o open the commit
-" Git difftool    - Open diff for current buffer in quickfix list
-" Git difftool -y - Open all git modifed files in a new tab
-" Gclog           - Open commit history in quick fix list (use cn and cp to
-" jump between quickfix items)
+lua require("plug-config/gitFugitive")
 
 "vim-gitgutter
-nmap ]h <Plug>(GitGutterNextHunk)
-nmap [h <Plug>(GitGutterPrevHunk)
-nmap <leader>ghs <Plug>(GitGutterStageHunk)
-xmap <leader>ghs <Plug>(GitGutterStageHunk)
-nmap <leader>ghu <Plug>(GitGutterUndoHunk)
-nmap <leader>ghp <Plug>(GitGutterPreviewHunk)
-"text-objects
-omap ih <Plug>(GitGutterTextObjectInnerPending)
-omap ah <Plug>(GitGutterTextObjectOuterPending)
-xmap ih <Plug>(GitGutterTextObjectInnerVisual)
-xmap ah <Plug>(GitGutterTextObjectOuterVisual)
-"toggle
-nmap tg :GitGutterToggle<CR>
+lua require("plug-config/gitGutter")
 
 "quick-scope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
