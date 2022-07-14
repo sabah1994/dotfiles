@@ -41,44 +41,22 @@ lua require('options')
 lua require('keyMappings')
 lua require('autocmds')
 
-" vim-commentary
-autocmd FileType json setlocal commentstring=//\ %s
-
 
 "PLUGINS configuration
+lua require("plug-config/coc")                          -- coc.vim
+lua require("plug-config/gruvbox")                      -- gruvbox | theme
+lua require("plug-config/nvimTree")                     -- nvim-tree | file explorer
+lua require("plug-config/lualine")                      -- lualine.nvim | statusline
+lua require("plug-config/bufferline")                   -- bufferline.nvim
+lua require("plug-config/treeSitter")                   -- tree-sitter
+lua require("plug-config/gitFugitive")                  -- vim-fugitive
+lua require("plug-config/gitGutter")                    -- vim-gitgutter
+lua require("plug-config/aerial")                       -- aerial | code outline
+lua require("plug-config/hop")                          -- hop.vim
+lua require("plug-config/fzf")                          -- fzf | fuzzy search finder
 
-"coc.vim
-lua require("plug-config/coc")
-
-"gruvbox | theme
-lua require("plug-config/gruvbox")
-
-"nvim-tree | file explorer
-lua require("plug-config/nvimTree")
-
-" lualine.nvim | statusline
-lua require("plug-config/lualine")
-
-"bufferline.nvim
-lua require("plug-config/bufferline")
-
-"tree-sitter
-lua require("plug-config/treeSitter")
-
-"vim-fugitive
-lua require("plug-config/gitFugitive")
-
-"vim-gitgutter
-lua require("plug-config/gitGutter")
-
-" Aerial | code outline
-lua require("plug-config/aerial")
-
-" hop.vim
-lua require("plug-config/hop")
-
-" fzf | fuzzy search finder
-lua require("plug-config/fzf")
+" vim-commentary
+autocmd FileType json setlocal commentstring=//\ %s
 
 "quick-scope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
