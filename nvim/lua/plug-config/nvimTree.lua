@@ -2,6 +2,7 @@ require("nvim-tree").setup({
     sort_by = "case_sensitive",
     git = {
         show_on_dirs = false,
+        ignore = true
     },
     view = {
         adaptive_size = true,
@@ -36,7 +37,7 @@ require("nvim-tree").setup({
     },
     filters = {
         -- dotfiles = true, --don't show hidden files
-        custom = { "venv", "__pycache__", ".git" } -- ignore folders
+        custom = { "venv", "__pycache__" } -- ignore folders
     },
     actions = {
         open_file = {
