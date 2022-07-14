@@ -71,6 +71,9 @@ lua require("plug-config/gitFugitive")
 "vim-gitgutter
 lua require("plug-config/gitGutter")
 
+" Aerial | code outline
+lua require("plug-config/aerial")
+
 "quick-scope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 highlight QuickScopePrimary guifg='#00dfff' gui=bold,underline ctermfg=45 cterm=bold,underline
@@ -135,21 +138,6 @@ let g:fzf_command_prefix = 'Fzf'
 " Other useful commands
 " Commits   | For commits
 " BCommits  | Commits related to current buffer
-
-" Aerial | code outline
-lua << EOF
-require('aerial').setup({
-  default_direction = "left",
-  nerd_font = true,
-  show_guides = true
-})
-EOF
-" toggle | also disables fade plugin
-nmap <leader>to :VimadeDisable <CR> :AerialToggle<CR>
-hi link AerialLine CursorLineNr
-
-
-
 
 " vim-repeat
 silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
