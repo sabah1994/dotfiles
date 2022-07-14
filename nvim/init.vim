@@ -74,22 +74,13 @@ lua require("plug-config/gitGutter")
 " Aerial | code outline
 lua require("plug-config/aerial")
 
+" hop.vim
+lua require("plug-config/hop")
+
 "quick-scope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 highlight QuickScopePrimary guifg='#00dfff' gui=bold,underline ctermfg=45 cterm=bold,underline
 highlight QuickScopeSecondary guifg='#afff5f' gui=bold,underline ctermfg=155 cterm=bold,underline
-
-" hop.vim
-lua << EOF
-require'hop'.setup()
-EOF
-"Not mapping s in operator mode because it's taken by surround
-nmap s <cmd>HopChar1<CR>
-vmap s <cmd>HopChar1<CR>
-map <leader>k <cmd>HopLineBC<CR>
-map <leader>j <cmd>HopLineAC<CR>
-map <leader><leader>k <cmd>HopWordBC<CR>
-map <leader><leader>j <cmd>HopWordAC<CR>
 
 " vimade | fades inactive windows
 nmap <leader>tf :VimadeToggle<CR>
