@@ -59,6 +59,9 @@ lua require("plug-config/nvimTree")
 " lualine.nvim | statusline
 lua require("plug-config/lualine")
 
+"bufferline.nvim
+lua require("plug-config/bufferline")
+
 "tree-sitter
 lua require("plug-config/treeSitter")
 
@@ -145,18 +148,6 @@ EOF
 nmap <leader>to :VimadeDisable <CR> :AerialToggle<CR>
 hi link AerialLine CursorLineNr
 
-"bufferline.nvim
-lua << EOF
-require("bufferline").setup{
-    options = {
-        show_buffer_close_icons = false,
-        show_close_icon = false,
-        separator_style = "thick",
-        numbers = "ordinal" -- or "buffer_id"
-        -- diagnostics = "coc"
-    }
-}
-EOF
 
 
 
