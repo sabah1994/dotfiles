@@ -54,6 +54,7 @@ lua require("plug-config/gitGutter")                    -- vim-gitgutter
 lua require("plug-config/aerial")                       -- aerial | code outline
 lua require("plug-config/hop")                          -- hop.vim
 lua require("plug-config/fzf")                          -- fzf | fuzzy search finder
+lua require("plug-config/vimspector")                   -- vimspector | debuggging
 
 " vim-commentary
 autocmd FileType json setlocal commentstring=//\ %s
@@ -66,35 +67,6 @@ highlight QuickScopeSecondary guifg='#afff5f' gui=bold,underline ctermfg=155 cte
 " vimade | fades inactive windows
 nmap <leader>tf :VimadeToggle<CR>
 
-" vimspector | debuggging <<==================================>>
-" Use arrow keys when debugging, makes it much simpler.
-" Because debug mode is rare, only map keys when it's turned on
-let s:vimSpectroDebugMode=0
-function ToggleKeysForDebug()
-    if s:vimSpectroDebugMode
-        unmap <Up>
-        unmap <Left>
-        unmap <Right>
-        unmap <Down>
-        echom "DebugMode is OFF"
-    else
-        nnoremap <Leader>ds :call vimspector#Launch()<CR>
-        nnoremap <Leader>de :call vimspector#Reset()<CR>
-        nnoremap <Leader>dc :call vimspector#Continue()<CR>
-        " breakpoints
-        nnoremap <Leader>db :call vimspector#ToggleBreakpoint()<CR>
-        nnoremap <Leader>dB :call vimspector#ClearBreakpoints()<CR>
-        "Arrow keys
-        nmap <Up> <Plug>VimspectorRestart
-        nmap <Left> <Plug>VimspectorStepOut
-        nmap <Right> <Plug>VimspectorStepInto
-        nmap <Down> <Plug>VimspectorStepOver
-        echom "DebugMode is ON"
-    endif
-    let s:vimSpectroDebugMode = !s:vimSpectroDebugMode
-endfunction
-nnoremap <leader>td :call ToggleKeysForDebug()<CR>
-" <<==========================================================>>
 
 
 " vim-repeat
