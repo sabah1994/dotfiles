@@ -77,6 +77,9 @@ lua require("plug-config/aerial")
 " hop.vim
 lua require("plug-config/hop")
 
+" fzf | fuzzy search finder
+lua require("plug-config/fzf")
+
 "quick-scope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 highlight QuickScopePrimary guifg='#00dfff' gui=bold,underline ctermfg=45 cterm=bold,underline
@@ -115,20 +118,6 @@ endfunction
 nnoremap <leader>td :call ToggleKeysForDebug()<CR>
 " <<==========================================================>>
 
-" fzf | fuzzy search finder
-nnoremap <silent><nowait> <leader>f  :<C-u>FzfFiles<CR>
-nnoremap <silent><nowait> <leader>gf  :<C-u>FzfGFiles<CR>
-nnoremap <silent><nowait> <leader>b  :<C-u>FzfBuffers<CR>
-nnoremap <silent><nowait> <leader>gr  :<C-u>FzfRg<CR>
-nnoremap <silent><nowait> <leader>c  :<C-u>FzfCommands<CR>
-"Use ag (silverSearcher) because it respects gitignore
-"Even in non-git folders it respects global gitignore
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
-" Add prefix for fzf commands
-let g:fzf_command_prefix = 'Fzf'
-" Other useful commands
-" Commits   | For commits
-" BCommits  | Commits related to current buffer
 
 " vim-repeat
 silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
