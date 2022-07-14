@@ -10,7 +10,7 @@ Plug("akinsho/bufferline.nvim", { tag = 'v2.*' })               -- Bufferline
 Plug("PeterRincker/vim-searchlight")                            -- Under cursor highlighted text in different colour
 Plug("lukas-reineke/indent-blankline.nvim")                     -- Indent guide
 Plug("TaDaa/vimade")                                            -- Show inactive windows in different colours
-Plug("psliwka/vim-smoothie")                                    -- Smooth scroll
+Plug("karb94/neoscroll.nvim")                                   -- Smooth scroll
 Plug("mhinz/vim-startify")                                      -- Startup screen
 
 -- Autocompletion And IDE Features
@@ -76,3 +76,6 @@ vim.api.nvim_command([[silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 
 -- nvim-autopairs
 require("nvim-autopairs").setup {}
+
+-- neoscroll
+require('neoscroll').setup()
