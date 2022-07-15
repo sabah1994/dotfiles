@@ -40,7 +40,7 @@ Plug("puremourning/vimspector")                                 -- Debugger
 Plug("junegunn/fzf", { ['do'] = vim.fn['fzf#install'] })        -- Installs FZF
 Plug("junegunn/fzf.vim")                                        -- Fuzzy finder
 Plug("stevearc/aerial.nvim")                                    -- Code outline
-Plug('windwp/nvim-autopairs')                                   -- Auto pairs
+Plug("jiangmiao/auto-pairs")                                    -- Auto pairs
 vim.call("plug#end")
 
 
@@ -73,9 +73,6 @@ vim.api.nvim_set_keymap("n", "<leader>tf", ":VimadeToggle<CR>", { noremap = true
 
 -- vim-repeat
 vim.api.nvim_command([[silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)]])
-
--- nvim-autopairs
-require("nvim-autopairs").setup {}
 
 -- neoscroll
 require('neoscroll').setup()

@@ -10,7 +10,6 @@ vim.g["coc_global_extensions"] = {
     "coc-snippets",
     "coc-tsserver",
     "coc-vimlsp",
-    -- "coc-pairs",
     "coc-lists",
     "coc-sh",
     "coc-sumneko-lua"

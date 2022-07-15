@@ -34,6 +34,7 @@
     "python.formatting.blackPath": "~/vim_venv/bin/black",
     // Lua
     "sumneko-lua.enableNvimLuaDev": true,
+    "sumneko-lua.checkUpdate": false,
     "Lua.telemetry.enable": false,
     "Lua.window.statusBar": false,
     "Lua.hint.enable": false,
