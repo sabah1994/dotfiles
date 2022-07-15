@@ -41,7 +41,20 @@ set.foldexpr = "nvim_treesitter#foldexpr()"             --treesitter for folds
 set.foldenable = false                                  --do not auto create folds when file opens
 set.foldnestmax = 3                                     --max nested fold level
 set.foldlevel = 2                                       --fold level: zr or zm
+function _G.MyFoldText()
+    local foldStartText = vim.fn.getline(vim.v.foldstart) .. "  "
+    local foldLineCount = vim.v.foldend - vim.v.foldstart
+    local totalLines    = vim.api.nvim_buf_line_count(0)
+    local foldPercInBuf = math.floor((foldLineCount / totalLines) * 100)
+    local conLen = string.len(foldStartText .. foldLineCount .. " lines: ")
+    local winWidth = vim.api.nvim_win_get_width(0)
 
+    return foldStartText ..
+        string.rep("-", ((winWidth - conLen) - 25)) ..
+        "  " .. foldLineCount .. " lines: " .. string.rep(" ", 2 - string.len(tostring(foldPercInBuf))) .. foldPercInBuf .. "%"
+end
+set.foldtext      = 'v:lua.MyFoldText()'
+vim.opt.fillchars = { fold = " " }
 
 --4 spaces with tab
 set.tabstop = 4                                         --number of spaces that a <Tab> in the file counts for
