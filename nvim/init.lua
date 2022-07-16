@@ -9,7 +9,6 @@ Plug("nvim-lualine/lualine.nvim")                               -- Status line
 Plug("akinsho/bufferline.nvim", { tag = 'v2.*' })               -- Bufferline
 Plug("PeterRincker/vim-searchlight")                            -- Under cursor highlighted text in different colour
 Plug("lukas-reineke/indent-blankline.nvim")                     -- Indent guide
-Plug("TaDaa/vimade")                                            -- Show inactive windows in different colours
 Plug("karb94/neoscroll.nvim")                                   -- Smooth scroll
 Plug("mhinz/vim-startify")                                      -- Startup screen
 
@@ -67,9 +66,6 @@ require('plug-config/quickScope')                               -- quick-scope
 
 -- vim-commentary
 vim.api.nvim_create_autocmd("FileType", { pattern = { "json" }, command = [[setlocal commentstring=//\ %s]] })
-
--- vimade | fades inactive windows
-vim.api.nvim_set_keymap("n", "<leader>tf", ":VimadeToggle<CR>", { noremap = true })
 
 -- vim-repeat
 vim.api.nvim_command([[silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)]])

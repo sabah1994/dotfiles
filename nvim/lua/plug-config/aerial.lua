@@ -5,5 +5,5 @@ require('aerial').setup({
 })
 
 -- toggle | also disables fade plugin
-vim.api.nvim_set_keymap( "n", "<leader>to", ":VimadeDisable <CR> :AerialToggle<CR>", {})
+vim.api.nvim_set_keymap( "n", "<leader>to", ":AerialToggle <CR>", {})
 vim.api.nvim_command("hi link AerialLine CursorLineNr")
