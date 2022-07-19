@@ -1,7 +1,7 @@
 require('lualine').setup({
     sections = {
         lualine_a = { "mode" },
-        lualine_b = { "branch", { "diff", symbols = { added = " ", modified = "柳", removed = "柳" } } },
+        lualine_b = { "branch", { "diff", symbols = { added = " ", modified = "柳", removed = " " } } },
         lualine_c = {
             { "filetype", padding = { right = 0, left = 2 }, icon_only = true,
                 component_separators = { left = "", right = "" } },
