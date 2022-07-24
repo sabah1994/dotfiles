@@ -25,11 +25,11 @@ end
 
 -- cursorline
 -- cursorline should only be visible in active window
-vim.api.nvim_create_autocmd("VimEnter", {pattern = "*", command = [[setlocal cursorline]]} )
-vim.api.nvim_create_autocmd("WinEnter", {pattern = "*", command = [[setlocal cursorline]]} )
-vim.api.nvim_create_autocmd("BufWinEnter", {pattern = "*", command = [[setlocal cursorline]]} )
-vim.api.nvim_create_autocmd("WinLeave", {pattern = "*", command = [[setlocal nocursorline]]} )
-set.cursorlineopt = "line"                              --do not highlight sign column in cursorline
+-- vim.api.nvim_create_autocmd("VimEnter", {pattern = "*", command = [[setlocal cursorline]]} )
+-- vim.api.nvim_create_autocmd("WinEnter", {pattern = "*", command = [[setlocal cursorline]]} )
+-- vim.api.nvim_create_autocmd("BufWinEnter", {pattern = "*", command = [[setlocal cursorline]]} )
+-- vim.api.nvim_create_autocmd("WinLeave", {pattern = "*", command = [[setlocal nocursorline]]} )
+-- set.cursorlineopt = "line"                              --do not highlight sign column in cursorline
 
 -- disable backups for coc
 set.backup = false
